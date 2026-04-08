@@ -1417,7 +1417,7 @@
   function goTo(pageId){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     document.getElementById(pageId).classList.add('active');
-    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+    document.querySelectorAll('.nav-item>a, .nav-item>span').forEach(a=>a.classList.remove('active'));
     const nl=document.getElementById('nl-'+pageId);
     if(nl)nl.classList.add('active');
     // nav style
@@ -1568,42 +1568,18 @@
     {cat:'artistes',title:'Nakisha Reed "KidCrayola"',sub:'Arts visuels · Peinture · Vibe Benders',action:()=>goTo('repertoire'),tag:'Artiste'},
     {cat:'artistes',title:'Keithy Antoine',sub:'Créatif · MC · Union Urbaine · Laval',action:()=>goTo('repertoire'),tag:'Artiste'},
     {cat:'artistes',title:'Allen Alexandre',sub:'Musicien · DJ · CCAM · Montréal',action:()=>goTo('repertoire'),tag:'Artiste'},
-    {cat:'oeuvres',title:'Masque Intérieur',sub:'Nakisha Reed · Arts visuels · 380 
-</script>
-</body>
-</html>
-,action:()=>goTo('gaaul'),tag:'GAAUL'},
-    {cat:'oeuvres',title:'Racines Visibles',sub:'Keithy Antoine · Photographie · 220 
-</script>
-</body>
-</html>
-,action:()=>goTo('gaaul'),tag:'GAAUL'},
-    {cat:'oeuvres',title:'Futur Antérieur',sub:'Collection GAAUL · Sculpture · 560 
-</script>
-</body>
-</html>
-,action:()=>goTo('gaaul'),tag:'GAAUL'},
-    {cat:'oeuvres',title:'Le Denim Comme Peau',sub:'Vladimir Laurore · Mode · 180 
-</script>
-</body>
-</html>
-,action:()=>goTo('gaaul'),tag:'GAAUL'},
-    {cat:'oeuvres',title:'Alphabet Urbain',sub:'Collection GAAUL · Art numérique · 120 
-</script>
-</body>
-</html>
-,action:()=>goTo('gaaul'),tag:'GAAUL'},
+    {cat:'oeuvres',title:'Masque Int\u00e9rieur',sub:'Nakisha Reed \u00b7 Arts visuels \u00b7 380\u00a0\u0024',action:()=>goTo('gaaul'),tag:'GAAUL'},
+    {cat:'oeuvres',title:'Racines Visibles',sub:'Keithy Antoine \u00b7 Photographie \u00b7 220\u00a0\u0024',action:()=>goTo('gaaul'),tag:'GAAUL'},
+    {cat:'oeuvres',title:'Futur Ant\u00e9rieur',sub:'Collection GAAUL \u00b7 Sculpture \u00b7 560\u00a0\u0024',action:()=>goTo('gaaul'),tag:'GAAUL'},
+    {cat:'oeuvres',title:'Le Denim Comme Peau',sub:'Vladimir Laurore \u00b7 Mode \u00b7 180\u00a0\u0024',action:()=>goTo('gaaul'),tag:'GAAUL'},
+    {cat:'oeuvres',title:'Alphabet Urbain',sub:'Collection GAAUL \u00b7 Art num\u00e9rique \u00b7 120\u00a0\u0024',action:()=>goTo('gaaul'),tag:'GAAUL'},
     {cat:'evenements',title:'Feaster Fest 2026',sub:'Festival · Laval · Mai/Juin 2026',action:()=>goTo('calendrier'),tag:'À venir'},
     {cat:'evenements',title:'Nappy Hour',sub:'Soirée culturelle · Montréal · 2026',action:()=>goTo('calendrier'),tag:'À venir'},
     {cat:'evenements',title:'Le Denim Lab',sub:'Mode & art urbain · Montréal · Jan 2026',action:()=>goTo('calendrier'),tag:'Passé'},
     {cat:'evenements',title:'Paint & Sip',sub:'Atelier créatif · Montréal · Fév 2025',action:()=>goTo('calendrier'),tag:'Passé'},
     {cat:'evenements',title:'Oser Entreprendre',sub:'Panel · Laval · Nov 2024',action:()=>goTo('calendrier'),tag:'Passé'},
     {cat:'appels',title:'GAAUL 2025 — Appel aux artistes',sub:'Afroavenir · Ouvert en continu · 80% des ventes',action:()=>goTo('appels'),tag:'Ouvert'},
-    {cat:'appels',title:'Résidence artistique — Culture urbaine',sub:'Ville de Laval · Danse · 3 000 
-</script>
-</body>
-</html>
-,action:()=>goTo('appels'),tag:'Ouvert'},
+    {cat:'appels',title:'R\u00e9sidence artistique \u2014 Culture urbaine',sub:'Ville de Laval \u00b7 Danse \u00b7 3\u00a0000\u00a0\u0024',action:()=>goTo('appels'),tag:'Ouvert'},
     {cat:'appels',title:'Feaster Fest 2026 — Participation',sub:'Feaster · Toutes disciplines · Rémunéré',action:()=>goTo('appels'),tag:'Ouvert'},
     {cat:'appels',title:'Nappy Hour — Artistes musicaux',sub:'Afroavenir · DJ · MC · Spoken word',action:()=>goTo('appels'),tag:'Ouvert'},
     {cat:'services',title:'Direction artistique clé en main',sub:'Festivals, galas, événements corporatifs',action:()=>goTo('batir'),tag:'Service'},
