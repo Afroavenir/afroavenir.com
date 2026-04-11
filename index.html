@@ -34,31 +34,58 @@
   /* DROPDOWN NAV */
   .nav-center{display:flex;align-items:center;gap:0;height:64px;}
   .nav-item{position:relative;height:64px;display:flex;align-items:center;}
-  .nav-item>a,.nav-item>span{font-size:12px;font-weight:600;color:var(--dark);text-decoration:none;opacity:0.6;transition:all 0.2s;cursor:pointer;padding:0 14px;height:64px;display:flex;align-items:center;gap:4px;white-space:nowrap;border-bottom:2px solid transparent;}
+  .nav-item>a,.nav-item>span{font-size:12px;font-weight:600;color:var(--dark);text-decoration:none;opacity:0.6;transition:all 0.2s;cursor:pointer;padding:0 16px;height:64px;display:flex;align-items:center;gap:5px;white-space:nowrap;border-bottom:2px solid transparent;}
   nav.dark .nav-item>a,nav.dark .nav-item>span{color:white;}
   .nav-item:hover>a,.nav-item:hover>span,.nav-item>a.active,.nav-item>span.active{opacity:1;color:var(--red);border-bottom-color:var(--red);}
   .nav-chevron{font-size:9px;opacity:0.5;transition:transform 0.2s;}
   .nav-item:hover .nav-chevron{transform:rotate(180deg);}
   /* DROPDOWN PANEL */
-  .nav-dropdown{position:absolute;top:64px;left:50%;transform:translateX(-50%);background:white;border:1px solid rgba(25,6,1,0.08);border-radius:12px;box-shadow:0 20px 60px rgba(25,6,1,0.12);min-width:220px;padding:8px;opacity:0;pointer-events:none;transition:opacity 0.15s,transform 0.15s;transform:translateX(-50%) translateY(-8px);}
+  .nav-dropdown{position:absolute;top:64px;left:50%;transform:translateX(-50%);background:white;border:1px solid rgba(25,6,1,0.08);border-radius:12px;box-shadow:0 20px 60px rgba(25,6,1,0.12);min-width:230px;padding:8px;opacity:0;pointer-events:none;transition:opacity 0.15s,transform 0.15s;transform:translateX(-50%) translateY(-8px);z-index:210;}
   nav.dark .nav-dropdown{background:#0f0a07;border-color:rgba(255,255,255,0.08);}
   .nav-item:hover .nav-dropdown{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
-  .nav-dropdown a,.nav-dropdown span{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:8px;font-size:12px;font-weight:500;color:var(--dark);text-decoration:none;cursor:pointer;transition:background 0.15s;white-space:nowrap;}
-  nav.dark .nav-dropdown a,nav.dark .nav-dropdown span{color:rgba(255,255,255,0.8);}
-  .nav-dropdown a:hover,.nav-dropdown span:hover{background:var(--cream);}
-  nav.dark .nav-dropdown a:hover,nav.dark .nav-dropdown span:hover{background:rgba(255,255,255,0.06);}
-  .nav-dropdown-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-  .di-red{background:rgba(241,79,53,0.1);}
-  .di-navy{background:rgba(10,43,71,0.1);}
+  .nav-dropdown>a,.nav-dropdown>span:not(.nav-dropdown-label),.nd-col>a,.nd-col>span:not(.nav-dropdown-label){display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:12.5px;font-weight:500;color:var(--dark);text-decoration:none;cursor:pointer;transition:background 0.15s;white-space:nowrap;line-height:1.4;}
+  nav.dark .nav-dropdown>a,nav.dark .nav-dropdown>span:not(.nav-dropdown-label),nav.dark .nd-col>a,nav.dark .nd-col>span:not(.nav-dropdown-label){color:rgba(255,255,255,0.8);}
+  .nav-dropdown>a:hover,.nav-dropdown>span:not(.nav-dropdown-label):hover,.nd-col>a:hover,.nd-col>span:not(.nav-dropdown-label):hover{background:var(--cream);}
+  nav.dark .nav-dropdown>a:hover,nav.dark .nav-dropdown>span:not(.nav-dropdown-label):hover,nav.dark .nd-col>a:hover,nav.dark .nd-col>span:not(.nav-dropdown-label):hover{background:rgba(255,255,255,0.06);}
+  .nav-dropdown-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:var(--dark);}
+  nav.dark .nav-dropdown-icon{color:rgba(255,255,255,0.7);}
+  .di-red{background:rgba(241,79,53,0.1);color:var(--red);}
+  .di-navy{background:rgba(10,43,71,0.1);color:var(--navy);}
   .di-dark{background:rgba(25,6,1,0.07);}
-  .di-brown{background:rgba(173,138,118,0.15);}
-  .nav-dropdown-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(25,6,1,0.3);padding:10px 14px 4px;display:block;}
+  .di-brown{background:rgba(173,138,118,0.15);color:var(--brown);}
+  .nav-dropdown-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(25,6,1,0.3);padding:10px 14px 6px;display:block;}
   nav.dark .nav-dropdown-label{color:rgba(255,255,255,0.2);}
-  .nav-dropdown hr{border:none;border-top:1px solid rgba(25,6,1,0.06);margin:4px 0;}
+  .nav-dropdown hr{border:none;border-top:1px solid rgba(25,6,1,0.06);margin:6px 8px;}
   nav.dark .nav-dropdown hr{border-top-color:rgba(255,255,255,0.06);}
   /* WIDE DROPDOWN */
   .nav-dropdown.wide{min-width:480px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
   .nav-dropdown.wide .nd-col{padding:8px;}
+  .nav-dropdown.wide .nd-col:first-child{border-right:1px solid rgba(25,6,1,0.06);}
+  nav.dark .nav-dropdown.wide .nd-col:first-child{border-right-color:rgba(255,255,255,0.06);}
+  /* HAMBURGER (mobile) */
+  .nav-hamburger{display:none;width:36px;height:36px;border:none;background:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px;}
+  .nav-hamburger span{display:block;width:20px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.3s;}
+  nav.dark .nav-hamburger span{background:white;}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(2.5px,2.5px);}
+  .nav-hamburger.open span:nth-child(2){opacity:0;}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(2.5px,-2.5px);}
+  /* MOBILE NAV OVERLAY */
+  .mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:white;z-index:199;overflow-y:auto;padding:16px 24px 80px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+  nav.dark~.mobile-nav{background:#0f0a07;}
+  .mobile-nav.open{opacity:1;pointer-events:all;}
+  .mobile-nav-item{border-bottom:1px solid rgba(25,6,1,0.06);padding:0;}
+  nav.dark~.mobile-nav .mobile-nav-item{border-bottom-color:rgba(255,255,255,0.06);}
+  .mobile-nav-item>button{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:14px;font-weight:600;color:var(--dark);background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+  nav.dark~.mobile-nav .mobile-nav-item>button{color:white;}
+  .mobile-nav-item .mob-chevron{font-size:10px;opacity:0.4;transition:transform 0.2s;}
+  .mobile-nav-item.open .mob-chevron{transform:rotate(180deg);}
+  .mobile-nav-sub{display:none;padding:0 0 12px 0;}
+  .mobile-nav-item.open .mobile-nav-sub{display:block;}
+  .mobile-nav-sub a,.mobile-nav-sub span{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:8px;font-size:13px;font-weight:500;color:var(--dark);text-decoration:none;cursor:pointer;transition:background 0.15s;}
+  nav.dark~.mobile-nav .mobile-nav-sub a,nav.dark~.mobile-nav .mobile-nav-sub span{color:rgba(255,255,255,0.7);}
+  .mobile-nav-sub a:hover,.mobile-nav-sub span:hover{background:var(--cream);}
+  .mobile-nav-cta{margin-top:24px;text-align:center;}
+  .mobile-nav-cta .nav-cta{display:inline-block;}
   /* SEARCH */
   .nav-search-wrap{position:relative;margin:0 8px;}
   .nav-search-btn{width:32px;height:32px;border-radius:20px;border:1px solid rgba(25,6,1,0.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
@@ -135,6 +162,16 @@
   .fr-i{display:inline;}
   body.lang-en .en-i{display:inline;}
   body.lang-en .fr-i{display:none;}
+  /* Fix: override .nav-dropdown span specificity for lang wrappers */
+  .nav-dropdown .en-i,.nav-dropdown .en{display:none;}
+  .nav-dropdown .fr-i{display:inline;}
+  .nav-dropdown .fr{display:block;}
+  body.lang-en .nav-dropdown .fr-i,body.lang-en .nav-dropdown .fr{display:none;}
+  body.lang-en .nav-dropdown .en-i{display:inline;}
+  body.lang-en .nav-dropdown .en{display:block;}
+  .nav-item>.en-i{display:none;}
+  body.lang-en .nav-item>.fr-i{display:none;}
+  body.lang-en .nav-item>.en-i{display:inline;}
 
   /* ════════════════════════════════
      HOME
@@ -455,21 +492,176 @@
   .proc-t strong{color:white;font-weight:600;display:block;margin-bottom:1px;}
 
   /* ════════════════════════════════
+     CALENDAR PAGE
+  ════════════════════════════════ */
+  .cal-filter-bar{background:white;border-bottom:1px solid rgba(25,6,1,0.08);padding:0 48px;display:flex;gap:0;position:sticky;top:64px;z-index:90;}
+  .cal-tab{padding:16px 0;margin-right:32px;font-size:12px;font-weight:600;color:rgba(25,6,1,0.4);border:none;background:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;}
+  .cal-tab.active{color:var(--dark);border-bottom-color:var(--red);}
+  .cal-section{padding:64px 48px;}
+  .cal-section-title{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:24px;}
+  /* Past events carousel */
+  .cal-carousel-wrap{position:relative;overflow:hidden;margin-bottom:48px;}
+  .cal-carousel{display:flex;gap:20px;transition:transform 0.4s ease;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px;}
+  .cal-carousel::-webkit-scrollbar{display:none;}
+  .cal-past-card{min-width:340px;max-width:380px;flex-shrink:0;scroll-snap-align:start;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:8px;overflow:hidden;transition:transform 0.3s;}
+  .cal-past-card:hover{transform:translateY(-4px);}
+  .cal-past-img{height:200px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;}
+  .cal-past-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,6,1,0.7) 0%,transparent 50%);}
+  .cal-past-img-date{position:relative;z-index:1;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+  .cal-past-body{padding:24px;}
+  .cal-past-name{font-size:20px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;margin-bottom:8px;}
+  .cal-past-desc{font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:12px;font-weight:300;}
+  .cal-past-meta{display:flex;gap:16px;align-items:center;padding-top:12px;border-top:1px solid rgba(25,6,1,0.06);}
+  .cal-past-meta-item{font-size:11px;color:rgba(25,6,1,0.4);display:flex;align-items:center;gap:4px;}
+  .cal-past-meta-item svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5;}
+  .cal-past-goal{font-size:12px;color:var(--brown);font-weight:500;font-style:italic;margin-top:8px;}
+  .cal-carousel-nav{display:flex;gap:8px;margin-top:16px;justify-content:center;}
+  .cal-carousel-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(25,6,1,0.15);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .cal-carousel-btn:hover{background:var(--dark);border-color:var(--dark);}
+  .cal-carousel-btn:hover svg{stroke:white;}
+  .cal-carousel-btn svg{width:14px;height:14px;stroke:var(--dark);fill:none;stroke-width:2;}
+  /* Upcoming events */
+  .cal-upcoming-grid{display:grid;grid-template-columns:1fr;gap:0;}
+  .cal-featured{background:var(--navy);padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-radius:8px;margin-bottom:20px;}
+  .cal-upcoming-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .cal-upcoming-card{padding:40px;border:1px solid rgba(25,6,1,0.07);border-radius:8px;background:white;}
+  .cal-upcoming-card.dark{background:var(--dark);border-color:rgba(255,255,255,0.06);}
+  /* Yearly calendar widget */
+  .cal-yearly-wrap{padding:64px 48px;background:var(--cream);border-top:1px solid rgba(25,6,1,0.06);}
+  .cal-yearly-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;}
+  .cal-widget{background:white;border:1px solid rgba(25,6,1,0.08);border-radius:12px;overflow:hidden;}
+  .cal-widget-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid rgba(25,6,1,0.06);}
+  .cal-widget-month{font-size:16px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;}
+  .cal-widget-year{font-size:13px;color:rgba(25,6,1,0.35);font-weight:500;}
+  .cal-widget-nav{display:flex;gap:4px;}
+  .cal-widget-nav button{width:28px;height:28px;border-radius:6px;border:1px solid rgba(25,6,1,0.1);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-size:12px;color:var(--dark);}
+  .cal-widget-nav button:hover{background:var(--dark);color:white;border-color:var(--dark);}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;padding:8px 16px 16px;}
+  .cal-grid-head{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(25,6,1,0.3);padding:8px 0;}
+  .cal-grid-day{font-size:13px;color:var(--dark);padding:8px 4px;border-radius:8px;cursor:default;transition:all 0.15s;font-weight:500;}
+  .cal-grid-day.other{color:rgba(25,6,1,0.15);}
+  .cal-grid-day.today{background:var(--red);color:white;font-weight:700;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin:0 auto;}
+  .cal-grid-day.event{position:relative;}
+  .cal-grid-day.event::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--red);}
+  .cal-events-list{padding:16px 24px 20px;border-top:1px solid rgba(25,6,1,0.06);}
+  .cal-event-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(25,6,1,0.04);}
+  .cal-event-row:last-child{border-bottom:none;}
+  .cal-event-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .cal-event-info{flex:1;}
+  .cal-event-name{font-size:13px;font-weight:600;color:var(--dark);}
+  .cal-event-date{font-size:11px;color:rgba(25,6,1,0.35);}
+
+  /* ════════════════════════════════
      RESPONSIVE
   ════════════════════════════════ */
+  /* Tablet & smaller desktop */
+  @media(max-width:1100px){
+    .nav-item>a,.nav-item>span{padding:0 10px;font-size:11px;}
+    .nav-dropdown.wide{min-width:400px;}
+    .nav-cta{font-size:11px;padding:7px 14px;}
+  }
+  /* Tablet portrait & mobile */
   @media(max-width:900px){
-    nav{padding:0 24px;}
-    .nav-links{display:none;}
-    .hero,.page-hero{grid-template-columns:1fr;padding:100px 24px 60px;}
-    .hero-right,.page-hero .right{display:none;}
+    nav{padding:0 20px;}
+    .nav-center{display:none;}
+    .nav-hamburger{display:flex;}
+    .mobile-nav{display:block;}
+    .nav-cta{display:none !important;}
+    .hero{grid-template-columns:1fr;padding:100px 24px 60px;}
+    .hero-right{display:none;}
+    .hero-left{padding:40px 24px;}
+    .hero-stats{gap:20px;flex-wrap:wrap;}
+    .stat-n{font-size:24px;}
     .personas-grid,.ev-grid,.impact-grid,.hc-grid,.ft-top,.gp-grid{grid-template-columns:1fr;}
+    .personas{padding:60px 24px;}
+    .gallery-prev,.impact,.events-sec{padding:60px 24px;}
+    .pcard{min-height:280px;padding:36px 24px;}
     .artists-grid{grid-template-columns:1fr 1fr;}
     .cpanel.active{grid-template-columns:1fr;}
     .cp-info{padding:48px 24px;}
     .cp-form{padding:48px 24px;border-left:none;border-top:1px solid rgba(25,6,1,0.07);}
     .inner-hero,.gaaul-hero{padding:100px 24px 60px;}
+    .ih-title{letter-spacing:-1.5px;}
+    .artwork-full{grid-template-columns:1fr !important;direction:ltr !important;}
+    .artwork-full:nth-child(even)>*{direction:ltr;}
+    .art-visual{min-height:50vh;}
+    .art-info{padding:48px 24px;}
+    .art-num{left:24px;font-size:60px;}
+    .sec-div{padding:24px;}
+    .filters-bar,.controls-bar{padding:0 24px;overflow-x:auto;flex-wrap:nowrap;}
+    .reason-bar{padding:0 24px;}
     .site-footer{padding:48px 24px 24px;}
     .home-contact{grid-template-columns:1fr;padding:60px 24px;}
+    .quote-band{padding:48px 24px;}
+    .gh-quote{display:none;}
+    .arow{grid-template-columns:48px 1fr 120px;padding:14px 24px;}
+    .arow-hdr{grid-template-columns:48px 1fr 120px;padding:10px 24px;}
+    .arow-disc,.arow-city{display:none;}
+    /* Calendar responsive */
+    #cal-upcoming>div,#cal-past>div{grid-template-columns:1fr !important;}
+    #cal-upcoming>div>div[style*="grid-column:span 2"]{grid-column:span 1 !important;}
+    #cal-upcoming>div>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+    /* About page responsive */
+    #apropos>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+    #apropos>div>div[style*="padding:80px 72px"]{padding:48px 24px !important;}
+    #apropos>div>div[style*="padding:80px 64px"]{padding:48px 24px !important;}
+    /* Appels page responsive */
+    #appels .appel-split{grid-template-columns:1fr !important;}
+  }
+  /* Small mobile */
+  @media(max-width:600px){
+    nav{padding:0 16px;height:56px;}
+    .nav-logo{gap:6px;}
+    .logo-svg{width:30px;height:30px;}
+    .nav-afro{font-size:15px;}
+    .nav-avenir{font-size:16px;}
+    .mobile-nav{top:56px;}
+    .hero{padding:80px 16px 48px;}
+    .hero-left{padding:20px 0;}
+    .hero-title{letter-spacing:-1.5px;}
+    .hero-sub{font-size:14px;}
+    .hero-actions{flex-direction:column;gap:10px;}
+    .hero-actions .btn-red,.hero-actions .btn-ghost-w{text-align:center;width:100%;}
+    .hero-stats{flex-direction:column;gap:16px;}
+    .personas{padding:48px 16px;}
+    .personas-grid{gap:12px;}
+    .pcard{min-height:240px;padding:28px 20px;}
+    .quote-band{padding:36px 16px;}
+    .gallery-prev,.impact,.events-sec{padding:48px 16px;}
+    .gp-grid{gap:4px;}
+    .ev-card .ev-body{padding:16px;}
+    .imp-card{padding:32px 20px;}
+    .imp-n{font-size:40px;}
+    .home-contact{padding:48px 16px;gap:32px;}
+    .hc-grid{grid-template-columns:1fr;}
+    .ft-top{gap:32px;}
+    .site-footer{padding:36px 16px 20px;}
+    .ft-bottom{flex-direction:column;gap:12px;text-align:center;}
+    .inner-hero,.gaaul-hero{padding:80px 16px 48px;min-height:50vh;}
+    .ih-bg{font-size:100px;}
+    .art-info{padding:36px 16px;}
+    .artists-grid{grid-template-columns:1fr;}
+    .acard-vis{height:180px;}
+    .artists-wrap{padding:32px 16px;}
+    .controls-bar,.filters-bar{padding:0 16px;}
+    .reason-bar{padding:0 16px;}
+    #cal-upcoming,#cal-past{padding:32px 16px !important;}
+    .slogan-band{padding:14px 0;}
+    .slogan-item{font-size:11px;}
+    /* Calendar page mobile */
+    .cal-filter-bar{padding:0 16px !important;}
+    .cal-yearly-wrap{padding:32px 16px !important;}
+  }
+  /* Landscape phone */
+  @media(max-height:500px) and (orientation:landscape){
+    .hero{min-height:auto;padding-top:72px;padding-bottom:32px;}
+    .inner-hero,.gaaul-hero{min-height:auto;padding-top:72px;padding-bottom:32px;}
+    .hero-stats{margin-top:24px;}
+  }
+  /* Safe area / notch handling */
+  @supports(padding:env(safe-area-inset-left)){
+    nav{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));}
+    .mobile-nav{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right));}
   }
 </style>
 </head>
@@ -478,29 +670,35 @@
 <nav id="main-nav">
   <div class="nav-logo" onclick="goTo('home')">
     <svg class="logo-svg" viewBox="0 0 100 100" fill="none">
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(0 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(30 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(60 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(90 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(120 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(150 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(180 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(210 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(240 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(270 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(300 50 50)"/>
-      <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(330 50 50)"/>
-      <circle cx="50" cy="50" r="26" fill="#190601"/>
-      <circle cx="50" cy="50" r="22" fill="#AD8A76"/>
-      <circle cx="50" cy="30" r="2.2" fill="#190601"/>
-      <circle cx="44.5" cy="33" r="2.2" fill="#190601"/>
-      <circle cx="55.5" cy="33" r="2.2" fill="#190601"/>
-      <path d="M50 37 L50 46 M50 37 L43 42 M50 37 L57 42" stroke="#190601" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <ellipse cx="43" cy="43" rx="4.5" ry="2" fill="#190601"/>
-      <ellipse cx="57" cy="43" rx="4.5" ry="2" fill="#190601"/>
-      <path d="M45 52 Q50 55 55 52" stroke="#190601" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <rect x="43" y="57" width="14" height="2.5" rx="1.2" fill="#190601"/>
-      <rect x="43" y="61.5" width="14" height="2.5" rx="1.2" fill="#190601"/>
+      <!-- Afro hair - 12 petals radiating outward -->
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(0 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(30 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(60 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(90 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(120 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(150 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(180 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(210 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(240 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(270 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(300 50 50)"/>
+      <ellipse cx="50" cy="10" rx="7" ry="12" fill="#190601" transform="rotate(330 50 50)"/>
+      <!-- Face base -->
+      <circle cx="50" cy="50" r="27" fill="#190601"/>
+      <circle cx="50" cy="50" r="23" fill="#AD8A76"/>
+      <!-- Eyes -->
+      <ellipse cx="42" cy="46" rx="3" ry="3.2" fill="#190601"/>
+      <ellipse cx="58" cy="46" rx="3" ry="3.2" fill="#190601"/>
+      <ellipse cx="42.8" cy="45.2" rx="1" ry="1.1" fill="white" opacity="0.4"/>
+      <ellipse cx="58.8" cy="45.2" rx="1" ry="1.1" fill="white" opacity="0.4"/>
+      <!-- Nose -->
+      <path d="M50 50v6" stroke="#190601" stroke-width="2" stroke-linecap="round"/>
+      <path d="M46 56q4 2.5 8 0" stroke="#190601" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- Smile -->
+      <path d="M42 62q8 6 16 0" stroke="#190601" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- Eyebrows -->
+      <path d="M37 40q5-3 10 0" stroke="#190601" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M53 40q5-3 10 0" stroke="#190601" stroke-width="2" stroke-linecap="round" fill="none"/>
     </svg>
     <div class="nav-wordmark">
       <span class="nav-afro">AFRO</span><span class="nav-avenir">avenir</span>
@@ -515,10 +713,10 @@
       <span onclick="goTo('gaaul')" id="nl-gaaul">GAAUL <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
         <span class="nav-dropdown-label"><span class="fr-i">Galerie</span><span class="en-i">Gallery</span></span>
-        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-red">🎨</span><div><div><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></div><div style="font-size:10px;opacity:0.5;">80% <span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div></div></span>
-        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-dark">🖼</span><span class="fr-i">Acquérir une œuvre</span><span class="en-i">Acquire a work</span></span>
+        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg></span><div><div><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></div><div style="font-size:10px;opacity:0.5;">80% <span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div></div></span>
+        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1.5" width="12" height="13" rx="1"/><rect x="4" y="3.5" width="8" height="8" rx=".5"/><line x1="6" y1="14.5" x2="6" y2="13"/><line x1="10" y1="14.5" x2="10" y2="13"/></svg></span><span class="fr-i">Acquérir une œuvre</span><span class="en-i">Acquire a work</span></span>
         <hr/>
-        <span onclick="goToContact('artiste')"><span class="nav-dropdown-icon di-brown">+</span><span class="fr-i">Exposer sur la GAAUL</span><span class="en-i">Exhibit on GAAUL</span></span>
+        <span onclick="goToContact('artiste')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><line x1="8" y1="5" x2="8" y2="11"/><line x1="5" y1="8" x2="11" y2="8"/></svg></span><span class="fr-i">Exposer sur la GAAUL</span><span class="en-i">Exhibit on GAAUL</span></span>
       </div>
     </div>
 
@@ -527,13 +725,13 @@
       <span onclick="goTo('repertoire')" id="nl-repertoire"><span class="fr-i">Artistes</span><span class="en-i">Artists</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
         <span class="nav-dropdown-label"><span class="fr-i">Répertoire</span><span class="en-i">Directory</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark">👤</span><span class="fr-i">Tous les artistes</span><span class="en-i">All artists</span></span>
-        <span onclick="()=>{goTo('repertoire');setTimeout(()=>rFilter('discipline','danse',document.querySelectorAll('.cfb')[1]),100)}"><span class="nav-dropdown-icon di-navy">💃</span>Danse</span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-red">🎵</span>Musique</span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-brown">🎨</span><span class="fr-i">Arts visuels</span><span class="en-i">Visual arts</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark">👗</span>Mode</span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span><span class="fr-i">Tous les artistes</span><span class="en-i">All artists</span></span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="2.5" r="1.5"/><path d="M5 7l3-1 2.5 4.5-3 2.5M4.5 15l2.5-2M11.5 15l-1.5-4"/></svg></span><span class="fr-i">Danse</span><span class="en-i">Dance</span></span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13V4l8-2v8"/><circle cx="4.5" cy="13" r="1.5"/><circle cx="12.5" cy="10" r="1.5"/></svg></span><span class="fr-i">Musique</span><span class="en-i">Music</span></span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2.5L5.5 9a2.1 2.1 0 103 3l6.5-7z"/><path d="M10.5 4.5l2 2"/></svg></span><span class="fr-i">Arts visuels</span><span class="en-i">Visual arts</span></span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 1.5L8 3l2.5-1.5"/><path d="M8 3v3"/><path d="M4 6h8l1 8H3z"/><line x1="6" y1="10" x2="10" y2="10"/></svg></span><span class="fr-i">Mode</span><span class="en-i">Fashion</span></span>
         <hr/>
-        <span onclick="openModal('book','','')"><span class="nav-dropdown-icon di-red">📋</span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
+        <span onclick="openModal('book','','')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7v13H4V4.5z"/><path d="M4 4.5L5 1.5"/><line x1="7" y1="5" x2="10" y2="5"/><line x1="7" y1="7.5" x2="10" y2="7.5"/><line x1="7" y1="10" x2="9" y2="10"/></svg></span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
       </div>
     </div>
 
@@ -543,14 +741,14 @@
       <div class="nav-dropdown wide">
         <div class="nd-col">
           <span class="nav-dropdown-label"><span class="fr-i">Services</span><span class="en-i">Services</span></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-navy">🎭</span><div><div><span class="fr-i">Direction artistique</span><span class="en-i">Artistic direction</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Festivals, galas, événements</span><span class="en-i">Festivals, galas, events</span></div></div></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-brown">🤝</span><div><div><span class="fr-i">Médiation culturelle</span><span class="en-i">Cultural mediation</span></div></div></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-red">💍</span><div><div><span class="fr-i">Événements privés</span><span class="en-i">Private events</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Mariages, anniversaires</span><span class="en-i">Weddings, birthdays</span></div></div></span>
+          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h12"/><path d="M4 14V6l4-4 4 4v8"/><line x1="8" y1="2" x2="8" y2="6"/><path d="M1 7l3-2"/><path d="M15 7l-3-2"/></svg></span><div><div><span class="fr-i">Direction artistique</span><span class="en-i">Artistic direction</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Festivals, galas, événements</span><span class="en-i">Festivals, galas, events</span></div></div></span>
+          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8.5c2-2 3.5-1 4.5 0s2.5 2 4.5 0"/><path d="M6.5 8.5c2-2 3.5-1 4.5 0s2.5 2 4.5 0"/><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/></svg></span><div><div><span class="fr-i">Médiation culturelle</span><span class="en-i">Cultural mediation</span></div></div></span>
+          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3C6.5.5 1 1 1 5c0 5 7 9 7 9s7-4 7-9c0-4-5.5-4.5-7-2z"/></svg></span><div><div><span class="fr-i">Événements privés</span><span class="en-i">Private events</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Mariages, anniversaires</span><span class="en-i">Weddings, birthdays</span></div></div></span>
         </div>
         <div class="nd-col">
           <span class="nav-dropdown-label"><span class="fr-i">Démarrer</span><span class="en-i">Get started</span></span>
-          <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-red">✉</span><span class="fr-i">Demande de collaboration</span><span class="en-i">Collaboration request</span></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-dark">📁</span><span class="fr-i">Voir nos réalisations</span><span class="en-i">See our work</span></span>
+          <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="10" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg></span><span class="fr-i">Demande de collaboration</span><span class="en-i">Collaboration request</span></span>
+          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5h5l1.5-2H14v11H2z"/><path d="M2 4.5V2.5h5l1.5 2"/></svg></span><span class="fr-i">Voir nos réalisations</span><span class="en-i">See our work</span></span>
         </div>
       </div>
     </div>
@@ -560,11 +758,11 @@
       <span onclick="goTo('appels')" id="nl-appels"><span class="fr-i">Appels à projets</span><span class="en-i">Open Calls</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
         <span class="nav-dropdown-label"><span class="fr-i">Pour les artistes</span><span class="en-i">For artists</span></span>
-        <span onclick="goTo('appels')"><span class="nav-dropdown-icon di-red">📣</span><span class="fr-i">Voir les appels ouverts</span><span class="en-i">View open calls</span></span>
-        <span onclick="openModal('apply','GAAUL 2025','Afroavenir')"><span class="nav-dropdown-icon di-brown">✍</span><span class="fr-i">Postuler — GAAUL 2025</span><span class="en-i">Apply — GAAUL 2025</span></span>
+        <span onclick="goTo('appels')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6h4l6-3v10l-6-3H2v-2z"/><path d="M14 6.5c1 .7 1 2.3 0 3"/></svg></span><span class="fr-i">Voir les appels ouverts</span><span class="en-i">View open calls</span></span>
+        <span onclick="openModal('apply','GAAUL 2025','Afroavenir')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 1.5l3.5 3.5L5.5 14H2v-3.5z"/><path d="M9.5 3l3.5 3.5"/></svg></span><span class="fr-i">Postuler — GAAUL 2025</span><span class="en-i">Apply — GAAUL 2025</span></span>
         <hr/>
         <span class="nav-dropdown-label"><span class="fr-i">Pour les institutions</span><span class="en-i">For institutions</span></span>
-        <span onclick="goToContact('appel')"><span class="nav-dropdown-icon di-navy">📮</span><span class="fr-i">Publier un appel</span><span class="en-i">Post a call</span></span>
+        <span onclick="goToContact('appel')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2h12v3l-4 3 4 3v3H2V11l4-3-4-3z"/><line x1="6" y1="10" x2="10" y2="10"/></svg></span><span class="fr-i">Publier un appel</span><span class="en-i">Post a call</span></span>
       </div>
     </div>
 
@@ -573,11 +771,11 @@
       <span onclick="goTo('calendrier')" id="nl-calendrier"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
         <span class="nav-dropdown-label"><span class="fr-i">Événements</span><span class="en-i">Events</span></span>
-        <span onclick="goTo('calendrier')"><span class="nav-dropdown-icon di-red">📅</span><span class="fr-i">Tous les événements</span><span class="en-i">All events</span></span>
-        <span onclick="goTo('calendrier')"><span class="nav-dropdown-icon di-navy">⭐</span><span class="fr-i">Événements à venir</span><span class="en-i">Upcoming events</span></span>
-        <span onclick="goTo('calendrier')"><span class="nav-dropdown-icon di-dark">📂</span><span class="fr-i">Événements passés</span><span class="en-i">Past events</span></span>
+        <span onclick="goTo('calendrier')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5.5" y1="1" x2="5.5" y2="4.5"/><line x1="10.5" y1="1" x2="10.5" y2="4.5"/></svg></span><span class="fr-i">Tous les événements</span><span class="en-i">All events</span></span>
+        <span onclick="goTo('calendrier');setTimeout(()=>switchCal('upcoming'),50)"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1.5 9.8,5.5 14,6 11,9 11.6,13.5 8,11.5 4.4,13.5 5,9 2,6 6.2,5.5"/></svg></span><span class="fr-i">Événements à venir</span><span class="en-i">Upcoming events</span></span>
+        <span onclick="goTo('calendrier');setTimeout(()=>switchCal('past'),50)"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2" width="13" height="4" rx="1"/><path d="M3 6v8h10V6"/><line x1="6.5" y1="9" x2="9.5" y2="9"/></svg></span><span class="fr-i">Événements passés</span><span class="en-i">Past events</span></span>
         <hr/>
-        <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-brown">+</span><span class="fr-i">Organiser un événement</span><span class="en-i">Organise an event</span></span>
+        <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="8" y1="9.5" x2="8" y2="12.5"/><line x1="6.5" y1="11" x2="9.5" y2="11"/></svg></span><span class="fr-i">Organiser un événement</span><span class="en-i">Organise an event</span></span>
       </div>
     </div>
 
@@ -585,10 +783,10 @@
     <div class="nav-item">
       <span onclick="goTo('apropos')" id="nl-apropos"><span class="fr-i">À propos</span><span class="en-i">About</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-dark">🏛</span><span class="fr-i">Notre histoire</span><span class="en-i">Our story</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-red">💡</span><span class="fr-i">Mission & valeurs</span><span class="en-i">Mission & values</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-brown">👥</span><span class="fr-i">L'équipe</span><span class="en-i">The team</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-navy">🤝</span><span class="fr-i">Partenaires</span><span class="en-i">Partners</span></span>
+        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 5v1h14V5z"/><line x1="3" y1="6" x2="3" y2="13"/><line x1="8" y1="6" x2="8" y2="13"/><line x1="13" y1="6" x2="13" y2="13"/><line x1="1" y1="13" x2="15" y2="13"/><line x1="1" y1="15" x2="15" y2="15"/></svg></span><span class="fr-i">Notre histoire</span><span class="en-i">Our story</span></span>
+        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1C5.8 1 4 2.8 4 5c0 1.5.8 2.8 2 3.5V11h4V8.5c1.2-.7 2-2 2-3.5 0-2.2-1.8-4-4-4z"/><line x1="6" y1="13" x2="10" y2="13"/><line x1="6.5" y1="15" x2="9.5" y2="15"/></svg></span><span class="fr-i">Mission & valeurs</span><span class="en-i">Mission & values</span></span>
+        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="4.5" r="2.2"/><circle cx="10.5" cy="4.5" r="2.2"/><path d="M1 14c0-2.5 2-4.5 4.5-4.5 1 0 2 .3 2.8.9"/><path d="M8.2 10.4c.8-.6 1.7-.9 2.8-.9 2.5 0 4.5 2 4.5 4.5"/></svg></span><span class="fr-i">L'équipe</span><span class="en-i">The team</span></span>
+        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2 5 2 5s2-2 4.5-2a4 4 0 012.3.7"/><path d="M9.5 9C12 9 14 11 14 11s-2 2-4.5 2a4 4 0 01-2.3-.7"/><line x1="6.5" y1="9.5" x2="9.5" y2="6.5"/></svg></span><span class="fr-i">Partenaires</span><span class="en-i">Partners</span></span>
       </div>
     </div>
 
@@ -603,8 +801,58 @@
     </div>
     <button class="lang-toggle" onclick="toggleLang()">FR / EN</button>
     <span class="nav-cta" onclick="goTo('contact')"><span class="fr-i">Nous contacter</span><span class="en-i">Contact us</span></span>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)">GAAUL <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('gaaul');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg></span><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></span>
+      <span onclick="goTo('gaaul');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1.5" width="12" height="13" rx="1"/><rect x="4" y="3.5" width="8" height="8" rx=".5"/><line x1="6" y1="14.5" x2="6" y2="13"/><line x1="10" y1="14.5" x2="10" y2="13"/></svg></span><span class="fr-i">Acquérir une œuvre</span><span class="en-i">Acquire a work</span></span>
+      <span onclick="goToContact('artiste');closeMobileNav()"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><line x1="8" y1="5" x2="8" y2="11"/><line x1="5" y1="8" x2="11" y2="8"/></svg></span><span class="fr-i">Exposer sur la GAAUL</span><span class="en-i">Exhibit on GAAUL</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)"><span class="fr-i">Artistes</span><span class="en-i">Artists</span> <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('repertoire');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span><span class="fr-i">Tous les artistes</span><span class="en-i">All artists</span></span>
+      <span onclick="openModal('book','','');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7v13H4V4.5z"/><path d="M4 4.5L5 1.5"/><line x1="7" y1="5" x2="10" y2="5"/><line x1="7" y1="7.5" x2="10" y2="7.5"/><line x1="7" y1="10" x2="9" y2="10"/></svg></span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)"><span class="fr-i">Bâtir Ensemble</span><span class="en-i">Build Together</span> <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('batir');closeMobileNav()"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h12"/><path d="M4 14V6l4-4 4 4v8"/><line x1="8" y1="2" x2="8" y2="6"/></svg></span><span class="fr-i">Direction artistique</span><span class="en-i">Artistic direction</span></span>
+      <span onclick="goToContact('institution');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="10" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg></span><span class="fr-i">Demande de collaboration</span><span class="en-i">Collaboration request</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)"><span class="fr-i">Appels à projets</span><span class="en-i">Open Calls</span> <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('appels');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6h4l6-3v10l-6-3H2v-2z"/><path d="M14 6.5c1 .7 1 2.3 0 3"/></svg></span><span class="fr-i">Voir les appels ouverts</span><span class="en-i">View open calls</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span> <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('calendrier');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5.5" y1="1" x2="5.5" y2="4.5"/><line x1="10.5" y1="1" x2="10.5" y2="4.5"/></svg></span><span class="fr-i">Tous les événements</span><span class="en-i">All events</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="toggleMobSub(this)"><span class="fr-i">À propos</span><span class="en-i">About</span> <span class="mob-chevron">▾</span></button>
+    <div class="mobile-nav-sub">
+      <span onclick="goTo('apropos');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 5v1h14V5z"/><line x1="3" y1="6" x2="3" y2="13"/><line x1="8" y1="6" x2="8" y2="13"/><line x1="13" y1="6" x2="13" y2="13"/><line x1="1" y1="13" x2="15" y2="13"/></svg></span><span class="fr-i">Notre histoire</span><span class="en-i">Our story</span></span>
+    </div>
+  </div>
+  <div class="mobile-nav-cta">
+    <span class="nav-cta" onclick="goTo('contact');closeMobileNav()"><span class="fr-i">Nous contacter</span><span class="en-i">Contact us</span></span>
+  </div>
+</div>
 
 <!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
@@ -797,18 +1045,17 @@
       <div>
         <div class="ft-logo" onclick="goTo('home')">
           <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(0 50 50)"/>
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(60 50 50)"/>
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(120 50 50)"/>
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(180 50 50)"/>
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(240 50 50)"/>
-            <ellipse cx="50" cy="11" rx="6.5" ry="11" fill="#190601" transform="rotate(300 50 50)"/>
-            <circle cx="50" cy="50" r="26" fill="#190601"/>
-            <circle cx="50" cy="50" r="22" fill="#AD8A76"/>
-            <circle cx="50" cy="30" r="2.2" fill="#190601"/>
-            <ellipse cx="43" cy="43" rx="4.5" ry="2" fill="#190601"/>
-            <ellipse cx="57" cy="43" rx="4.5" ry="2" fill="#190601"/>
-            <rect x="43" y="57" width="14" height="2.5" rx="1.2" fill="#190601"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(0 50 50)"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(60 50 50)"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(120 50 50)"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(180 50 50)"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(240 50 50)"/>
+            <ellipse cx="50" cy="10" rx="7" ry="12" fill="white" opacity="0.8" transform="rotate(300 50 50)"/>
+            <circle cx="50" cy="50" r="27" fill="white" opacity="0.8"/>
+            <circle cx="50" cy="50" r="23" fill="#AD8A76"/>
+            <ellipse cx="42" cy="46" rx="3" ry="3.2" fill="white" opacity="0.8"/>
+            <ellipse cx="58" cy="46" rx="3" ry="3.2" fill="white" opacity="0.8"/>
+            <path d="M42 62q8 6 16 0" stroke="white" opacity="0.8" stroke-width="2" stroke-linecap="round" fill="none"/>
           </svg>
           <span class="ft-afro">AFRO</span><span class="ft-avenir">avenir</span>
         </div>
@@ -1177,85 +1424,152 @@
     <h1 class="ih-title"><span class="fr">Là où tout<br><span class="gochi">se passe.</span></span><span class="en">Where it all<br><span class="gochi">happens.</span></span></h1>
     <p class="ih-sub"><span class="fr">Retrouvez tous les événements Afroavenir — passés et à venir. Activations culturelles, galas, ateliers et festivals.</span><span class="en">Find all Afroavenir events — past and upcoming. Cultural activations, galas, workshops and festivals.</span></p>
   </section>
+
   <!-- FILTER BAR -->
-  <div style="background:white;border-bottom:1px solid rgba(25,6,1,0.08);padding:0 48px;display:flex;gap:0;position:sticky;top:64px;z-index:90;">
-    <button style="padding:16px 0;margin-right:32px;font-size:12px;font-weight:600;color:var(--dark);border:none;background:none;border-bottom:2px solid var(--red);cursor:pointer;font-family:'Inter',sans-serif;" id="cal-tab-upcoming" onclick="switchCal('upcoming')"><span class="fr-i">À venir</span><span class="en-i">Upcoming</span></button>
-    <button style="padding:16px 0;margin-right:32px;font-size:12px;font-weight:600;color:rgba(25,6,1,0.4);border:none;background:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;" id="cal-tab-past" onclick="switchCal('past')"><span class="fr-i">Passés</span><span class="en-i">Past</span></button>
-    <button style="padding:16px 0;font-size:12px;font-weight:600;color:rgba(25,6,1,0.4);border:none;background:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;" id="cal-tab-all" onclick="switchCal('all')"><span class="fr-i">Tous</span><span class="en-i">All</span></button>
+  <div class="cal-filter-bar">
+    <button class="cal-tab active" id="cal-tab-upcoming" onclick="switchCal('upcoming')"><span class="fr-i">À venir</span><span class="en-i">Upcoming</span></button>
+    <button class="cal-tab" id="cal-tab-past" onclick="switchCal('past')"><span class="fr-i">Passés</span><span class="en-i">Past</span></button>
+    <button class="cal-tab" id="cal-tab-all" onclick="switchCal('all')"><span class="fr-i">Tous</span><span class="en-i">All</span></button>
     <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
       <span onclick="goToContact('institution')" class="nav-cta" style="font-size:11px;padding:6px 14px;"><span class="fr-i">+ Organiser un événement</span><span class="en-i">+ Organise an event</span></span>
     </div>
   </div>
-  <!-- UPCOMING -->
-  <div id="cal-upcoming" style="padding:64px 48px;">
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;">
-      <!-- FEATURED UPCOMING -->
-      <div style="grid-column:span 2;background:var(--navy);padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+
+  <!-- UPCOMING EVENTS -->
+  <div id="cal-upcoming" class="cal-section">
+    <div class="cal-section-title"><span class="fr-i">Prochains événements</span><span class="en-i">Upcoming events</span></div>
+    <div class="cal-upcoming-grid">
+      <!-- FEATURED -->
+      <div class="cal-featured">
         <div>
           <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px;"><span class="fr-i">Prochain événement</span><span class="en-i">Next event</span></div>
           <h2 style="font-size:clamp(32px,4vw,52px);font-weight:900;color:white;letter-spacing:-1.5px;margin-bottom:16px;line-height:1.05;">Feaster Fest 2026</h2>
-          <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:28px;font-weight:300;"><span class="fr">Festival de musique à Laval. Afroavenir assure la direction artistique pour la 2e année consécutive. Artistes de toutes disciplines.</span><span class="en">Music festival in Laval. Afroavenir leads the artistic direction for the 2nd consecutive year. Artists of all disciplines.</span></p>
-          <div style="display:flex;gap:24px;margin-bottom:28px;">
+          <p style="font-size:15px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:28px;font-weight:300;"><span class="fr">Festival de musique à Laval. Afroavenir assure la direction artistique pour la 2e année consécutive.</span><span class="en">Music festival in Laval. Afroavenir leads the artistic direction for the 2nd consecutive year.</span></p>
+          <div style="display:flex;gap:24px;margin-bottom:28px;flex-wrap:wrap;">
             <div><div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Date</div><div style="font-size:15px;font-weight:700;color:white;"><span class="fr-i">Mai / Juin 2026</span><span class="en-i">May / June 2026</span></div></div>
-            <div><div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Lieu</div><div style="font-size:15px;font-weight:700;color:white;">Laval, QC</div></div>
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;"><span class="fr-i">Lieu</span><span class="en-i">Location</span></div><div style="font-size:15px;font-weight:700;color:white;">Laval, QC</div></div>
             <div><div style="font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;"><span class="fr-i">Artistes</span><span class="en-i">Artists</span></div><div style="font-size:15px;font-weight:700;color:white;">15+</div></div>
           </div>
-          <div style="display:flex;gap:10px;">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <span class="btn-red" style="font-size:13px;padding:12px 24px;" onclick="openModal('apply','Feaster Fest 2026','Feaster · via Afroavenir')"><span class="fr-i">Participer comme artiste</span><span class="en-i">Join as an artist</span></span>
             <span class="btn-ghost-w" style="font-size:13px;padding:12px 24px;" onclick="goToContact('institution')"><span class="fr-i">Commanditer</span><span class="en-i">Sponsor</span></span>
           </div>
         </div>
-        <div style="background:linear-gradient(145deg,#0A2B47,#1a5a8a);border-radius:4px;height:300px;display:flex;align-items:center;justify-content:center;">
+        <div style="background:linear-gradient(145deg,#0A2B47,#1a5a8a);border-radius:8px;height:300px;display:flex;align-items:center;justify-content:center;">
           <div style="text-align:center;"><div style="font-size:11px;letter-spacing:0.2em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;">Feaster</div><div style="font-size:72px;font-weight:900;color:rgba(255,255,255,0.08);letter-spacing:-3px;line-height:1;">2026</div></div>
         </div>
       </div>
-      <!-- NAPPY HOUR -->
-      <div style="background:white;padding:44px;border:1px solid rgba(25,6,1,0.07);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;"><span class="fr-i">Soirée culturelle</span><span class="en-i">Cultural evening</span></div>
-        <h3 style="font-size:26px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;line-height:1.1;">Nappy Hour</h3>
-        <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:20px;font-weight:300;"><span class="fr">Soirée intime célébrant la culture noire urbaine. DJ, MC, spoken word, performances live.</span><span class="en">Intimate evening celebrating Black urban culture. DJ, MC, spoken word, live performances.</span></p>
-        <div style="display:flex;gap:20px;margin-bottom:20px;"><div><div style="font-size:10px;color:rgba(25,6,1,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Date</div><div style="font-size:13px;font-weight:700;color:var(--dark);">2026 — <span class="fr-i">À confirmer</span><span class="en-i">TBC</span></div></div><div><div style="font-size:10px;color:rgba(25,6,1,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Lieu</div><div style="font-size:13px;font-weight:700;color:var(--dark);">Montréal</div></div></div>
-        <span class="btn-dark" style="font-size:12px;padding:10px 20px;" onclick="openModal('apply','Nappy Hour','Afroavenir')"><span class="fr-i">Participer comme artiste</span><span class="en-i">Perform as an artist</span></span>
-      </div>
-      <!-- GAAUL EVENT -->
-      <div style="background:var(--dark);padding:44px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;"><span class="fr-i">Exposition · Galerie</span><span class="en-i">Exhibition · Gallery</span></div>
-        <h3 style="font-size:26px;font-weight:900;color:white;letter-spacing:-0.5px;margin-bottom:10px;line-height:1.1;">GAAUL Live — <span class="fr-i">Exposition</span><span class="en-i">Exhibition</span></h3>
-        <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:20px;font-weight:300;"><span class="fr">Première exposition physique de la GAAUL. Œuvres originales, performances live et ventes directes aux collectionneurs.</span><span class="en">First physical GAAUL exhibition. Original works, live performances and direct sales to collectors.</span></p>
-        <div style="display:flex;gap:20px;margin-bottom:20px;"><div><div style="font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Date</div><div style="font-size:13px;font-weight:700;color:white;"><span class="fr-i">Sept / Oct 2026</span><span class="en-i">Sept / Oct 2026</span></div></div><div><div style="font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Lieu</div><div style="font-size:13px;font-weight:700;color:white;">Laval / Montréal</div></div></div>
-        <span class="btn-red" style="font-size:12px;padding:10px 20px;" onclick="openModal('apply','GAAUL Live 2026','Afroavenir')"><span class="fr-i">Soumettre une œuvre</span><span class="en-i">Submit a work</span></span>
-      </div>
-    </div>
-  </div>
-  <!-- PAST EVENTS -->
-  <div id="cal-past" style="padding:64px 48px;display:none;">
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;">
-      <div style="background:white;padding:44px;border:1px solid rgba(25,6,1,0.07);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.3);margin-bottom:12px;">10 Jan 2026</div>
-        <h3 style="font-size:24px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;">Le Denim Lab</h3>
-        <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:16px;font-weight:300;"><span class="fr">Mode, art urbain et identité. Pièces upcyclées, performances live, créateurs locaux.</span><span class="en">Fashion, urban art and identity. Upcycled pieces, live performances, local creators.</span></p>
-        <div style="display:flex;gap:16px;"><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Mode</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Montréal</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Upcycling</span></div>
-      </div>
-      <div style="background:white;padding:44px;border:1px solid rgba(25,6,1,0.07);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.3);margin-bottom:12px;">31 Mai – 1 Juin 2025</div>
-        <h3 style="font-size:24px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;">Feaster Fest 2025</h3>
-        <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:16px;font-weight:300;"><span class="fr">15 artistes · Matériaux 100% recyclés · Direction artistique Afroavenir.</span><span class="en">15 artists · 100% recycled materials · Afroavenir artistic direction.</span></p>
-        <div style="display:flex;gap:16px;"><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Festival</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Laval</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Direction artistique</span></div>
-      </div>
-      <div style="background:white;padding:44px;border:1px solid rgba(25,6,1,0.07);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.3);margin-bottom:12px;">21 Fév 2025</div>
-        <h3 style="font-size:24px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;">Paint & Sip</h3>
-        <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:16px;font-weight:300;"><span class="fr">Notre premier événement payant. Premières ventes d'œuvres. Preuve que le modèle fonctionne.</span><span class="en">Our first ticketed event. First artwork sales. Proof the model works.</span></p>
-        <div style="display:flex;gap:16px;"><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Atelier</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Montréal</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Payant</span></div>
-      </div>
-      <div style="background:white;padding:44px;border:1px solid rgba(25,6,1,0.07);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.3);margin-bottom:12px;">14 Nov 2024</div>
-        <h3 style="font-size:24px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;">Oser Entreprendre</h3>
-        <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:16px;font-weight:300;"><span class="fr">Notre premier événement pilote. Panel de 4 acteurs culturels. Centre des Archives de Laval.</span><span class="en">Our first pilot event. Panel of 4 cultural leaders. Laval Archives Centre.</span></p>
-        <div style="display:flex;gap:16px;"><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Panel</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Laval</span><span style="font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(25,6,1,0.1);color:rgba(25,6,1,0.4);">Gratuit</span></div>
+      <!-- OTHER UPCOMING -->
+      <div class="cal-upcoming-pair">
+        <div class="cal-upcoming-card">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;"><span class="fr-i">Soirée culturelle</span><span class="en-i">Cultural evening</span></div>
+          <h3 style="font-size:24px;font-weight:900;color:var(--dark);letter-spacing:-0.5px;margin-bottom:10px;line-height:1.1;">Nappy Hour</h3>
+          <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.6;margin-bottom:20px;font-weight:300;"><span class="fr">Soirée intime célébrant la culture noire urbaine. DJ, MC, spoken word, performances live.</span><span class="en">Intimate evening celebrating Black urban culture. DJ, MC, spoken word, live performances.</span></p>
+          <div style="display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap;"><div><div style="font-size:10px;color:rgba(25,6,1,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Date</div><div style="font-size:13px;font-weight:700;color:var(--dark);">2026 — <span class="fr-i">À confirmer</span><span class="en-i">TBC</span></div></div><div><div style="font-size:10px;color:rgba(25,6,1,0.3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;"><span class="fr-i">Lieu</span><span class="en-i">Location</span></div><div style="font-size:13px;font-weight:700;color:var(--dark);">Montréal</div></div></div>
+          <span class="btn-dark" style="font-size:12px;padding:10px 20px;" onclick="openModal('apply','Nappy Hour','Afroavenir')"><span class="fr-i">Participer comme artiste</span><span class="en-i">Perform as an artist</span></span>
+        </div>
+        <div class="cal-upcoming-card dark">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:14px;"><span class="fr-i">Exposition · Galerie</span><span class="en-i">Exhibition · Gallery</span></div>
+          <h3 style="font-size:24px;font-weight:900;color:white;letter-spacing:-0.5px;margin-bottom:10px;line-height:1.1;">GAAUL Live — <span class="fr-i">Exposition</span><span class="en-i">Exhibition</span></h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:20px;font-weight:300;"><span class="fr">Première exposition physique de la GAAUL. Œuvres originales, performances live et ventes directes.</span><span class="en">First physical GAAUL exhibition. Original works, live performances and direct sales.</span></p>
+          <div style="display:flex;gap:20px;margin-bottom:20px;flex-wrap:wrap;"><div><div style="font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;">Date</div><div style="font-size:13px;font-weight:700;color:white;"><span class="fr-i">Sept / Oct 2026</span><span class="en-i">Sept / Oct 2026</span></div></div><div><div style="font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;"><span class="fr-i">Lieu</span><span class="en-i">Location</span></div><div style="font-size:13px;font-weight:700;color:white;">Laval / Montréal</div></div></div>
+          <span class="btn-red" style="font-size:12px;padding:10px 20px;" onclick="openModal('apply','GAAUL Live 2026','Afroavenir')"><span class="fr-i">Soumettre une œuvre</span><span class="en-i">Submit a work</span></span>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- PAST EVENTS — CAROUSEL -->
+  <div id="cal-past" class="cal-section" style="background:white;display:none;">
+    <div class="cal-section-title"><span class="fr-i">Événements passés</span><span class="en-i">Past events</span></div>
+    <div class="cal-carousel-wrap">
+      <div class="cal-carousel" id="cal-carousel">
+        <!-- Le Denim Lab -->
+        <div class="cal-past-card">
+          <div class="cal-past-img" style="background:linear-gradient(145deg,#1a0d06,#3d2010);">
+            <div class="cal-past-img-overlay"></div>
+            <div class="cal-past-img-date">10 Jan 2026</div>
+          </div>
+          <div class="cal-past-body">
+            <div class="cal-past-name">Le Denim Lab</div>
+            <div class="cal-past-desc"><span class="fr">Mode, art urbain et identité. Pièces upcyclées, performances live, créateurs locaux.</span><span class="en">Fashion, urban art and identity. Upcycled pieces, live performances, local creators.</span></div>
+            <div class="cal-past-meta">
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="5" r="2.5"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>40+ <span class="fr-i">participants</span><span class="en-i">attendees</span></div>
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>Montréal</div>
+            </div>
+            <div class="cal-past-goal"><span class="fr">Célébrer la mode comme langage identitaire de la rue.</span><span class="en">Celebrating fashion as the identity language of the streets.</span></div>
+          </div>
+        </div>
+        <!-- Feaster Fest 2025 -->
+        <div class="cal-past-card">
+          <div class="cal-past-img" style="background:linear-gradient(145deg,#0A2B47,#1a5a8a);">
+            <div class="cal-past-img-overlay"></div>
+            <div class="cal-past-img-date">31 Mai – 1 Juin 2025</div>
+          </div>
+          <div class="cal-past-body">
+            <div class="cal-past-name">Feaster Fest 2025</div>
+            <div class="cal-past-desc"><span class="fr">15 artistes. Matériaux 100% recyclés. Direction artistique Afroavenir. Notre plus grand événement.</span><span class="en">15 artists. 100% recycled materials. Afroavenir artistic direction. Our biggest event.</span></div>
+            <div class="cal-past-meta">
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="5" r="2.5"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>150+ <span class="fr-i">participants</span><span class="en-i">attendees</span></div>
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>Laval, QC</div>
+            </div>
+            <div class="cal-past-goal"><span class="fr">Prouver que l'art afro-urbain peut remplir un festival entier.</span><span class="en">Proving that Afro-urban art can fill an entire festival.</span></div>
+          </div>
+        </div>
+        <!-- Paint & Sip -->
+        <div class="cal-past-card">
+          <div class="cal-past-img" style="background:linear-gradient(145deg,#300E05,#F14F35);">
+            <div class="cal-past-img-overlay"></div>
+            <div class="cal-past-img-date"><span class="fr-i">21 Fév 2025</span><span class="en-i">21 Feb 2025</span></div>
+          </div>
+          <div class="cal-past-body">
+            <div class="cal-past-name">Paint & Sip</div>
+            <div class="cal-past-desc"><span class="fr">Notre premier événement payant. Premières ventes d'œuvres. Preuve que le modèle fonctionne.</span><span class="en">Our first ticketed event. First artwork sales. Proof the model works.</span></div>
+            <div class="cal-past-meta">
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="5" r="2.5"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>25 <span class="fr-i">participants</span><span class="en-i">attendees</span></div>
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>Montréal</div>
+            </div>
+            <div class="cal-past-goal"><span class="fr">Valider le modèle économique — l'art peut payer.</span><span class="en">Validating the economic model — art can pay.</span></div>
+          </div>
+        </div>
+        <!-- Oser Entreprendre -->
+        <div class="cal-past-card">
+          <div class="cal-past-img" style="background:linear-gradient(145deg,var(--dark),#300E05);">
+            <div class="cal-past-img-overlay"></div>
+            <div class="cal-past-img-date">14 Nov 2024</div>
+          </div>
+          <div class="cal-past-body">
+            <div class="cal-past-name">Oser Entreprendre</div>
+            <div class="cal-past-desc"><span class="fr">Notre premier événement pilote. Panel de 4 acteurs culturels. Centre des Archives de Laval.</span><span class="en">Our first pilot event. Panel of 4 cultural leaders. Laval Archives Centre.</span></div>
+            <div class="cal-past-meta">
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="5" r="2.5"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg>30 <span class="fr-i">participants</span><span class="en-i">attendees</span></div>
+              <div class="cal-past-meta-item"><svg viewBox="0 0 16 16" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>Laval, QC</div>
+            </div>
+            <div class="cal-past-goal"><span class="fr">Lancer la conversation — les artistes méritent mieux.</span><span class="en">Starting the conversation — artists deserve better.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cal-carousel-nav">
+        <button class="cal-carousel-btn" onclick="scrollCarousel(-1)"><svg viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg></button>
+        <button class="cal-carousel-btn" onclick="scrollCarousel(1)"><svg viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- YEARLY CALENDAR WIDGET -->
+  <div class="cal-yearly-wrap">
+    <div class="cal-yearly-header">
+      <div>
+        <div class="s-eyebrow"><span class="fr-i">Réflexion annuelle</span><span class="en-i">Yearly reflection</span></div>
+        <h2 class="s-title" style="margin-bottom:0;"><span class="fr">Le rythme Afroavenir.</span><span class="en">The Afroavenir rhythm.</span></h2>
+      </div>
+      <p style="font-size:13px;color:rgba(25,6,1,0.4);max-width:280px;text-align:right;line-height:1.6;"><span class="fr">Chaque événement est une étape. Chaque mois, nous avançons.</span><span class="en">Every event is a milestone. Every month, we move forward.</span></p>
+    </div>
+    <div class="cal-widget" id="cal-widget">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
   <div style="background:var(--dark);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;">
     <span style="font-size:12px;color:rgba(255,255,255,0.2);">© 2026 Afroavenir</span>
     <span style="font-size:13px;color:rgba(255,255,255,0.3);cursor:pointer;" onclick="goTo('home')">← <span class="fr-i">Accueil</span><span class="en-i">Home</span></span>
@@ -1612,7 +1926,7 @@
       return matchCat&&matchQ;
     });
     if(!filtered.length){res.innerHTML='<p style="text-align:center;color:rgba(255,255,255,0.3);font-size:14px;padding:32px;">Aucun résultat / No results</p>';return;}
-    const icons={artistes:'👤',oeuvres:'🖼',evenements:'📅',appels:'📣',services:'🤝'};
+    const icons={artistes:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg>',oeuvres:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg>',evenements:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5.5" y1="1" x2="5.5" y2="4.5"/><line x1="10.5" y1="1" x2="10.5" y2="4.5"/></svg>',appels:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6h4l6-3v10l-6-3H2v-2z"/><path d="M14 6.5c1 .7 1 2.3 0 3"/></svg>',services:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2 5 2 5s2-2 4.5-2a4 4 0 012.3.7"/><path d="M9.5 9C12 9 14 11 14 11s-2 2-4.5 2a4 4 0 01-2.3-.7"/><line x1="6.5" y1="9.5" x2="9.5" y2="6.5"/></svg>'};
     const colors={artistes:'di-red',oeuvres:'di-brown',evenements:'di-navy',appels:'di-dark',services:'di-brown'};
     res.innerHTML=filtered.slice(0,8).map(d=>`
       <div class="search-result-item" onclick="(${d.action.toString()})();closeSearch()">
@@ -1628,11 +1942,106 @@
     ['upcoming','past'].forEach(t=>{
       document.getElementById('cal-'+t).style.display=t===tab||tab==='all'?'block':'none';
     });
-    ['upcoming','past','all'].forEach(t=>{
-      const el=document.getElementById('cal-tab-'+t);
-      if(el){el.style.cssText=`padding:16px 0;margin-right:32px;font-size:12px;font-weight:600;border:none;background:none;cursor:pointer;font-family:Inter,sans-serif;border-bottom:2px solid ${t===tab?'var(--red)':'transparent'};color:${t===tab?'var(--dark)':'rgba(25,6,1,0.4)'};`;}
+    document.querySelectorAll('.cal-tab').forEach(el=>{
+      el.classList.remove('active');
     });
+    const activeTab=document.getElementById('cal-tab-'+tab);
+    if(activeTab)activeTab.classList.add('active');
   }
+
+  /* ── MOBILE NAV ── */
+  function toggleMobileNav(){
+    const nav=document.getElementById('mobile-nav');
+    const btn=document.querySelector('.nav-hamburger');
+    const isOpen=nav.classList.toggle('open');
+    btn.classList.toggle('open',isOpen);
+    document.body.style.overflow=isOpen?'hidden':'';
+  }
+  function closeMobileNav(){
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.querySelector('.nav-hamburger').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function toggleMobSub(btn){
+    const item=btn.parentElement;
+    item.classList.toggle('open');
+  }
+
+  /* ── CALENDAR CAROUSEL ── */
+  function scrollCarousel(dir){
+    const c=document.getElementById('cal-carousel');
+    if(!c)return;
+    const cardW=c.querySelector('.cal-past-card')?.offsetWidth||360;
+    c.scrollBy({left:dir*(cardW+20),behavior:'smooth'});
+  }
+
+  /* ── CALENDAR WIDGET ── */
+  let calWidgetDate=new Date();
+  const CAL_EVENTS=[
+    {date:'2024-11-14',name:'Oser Entreprendre',color:'var(--dark)'},
+    {date:'2025-02-21',name:'Paint & Sip',color:'var(--red)'},
+    {date:'2025-05-31',name:'Feaster Fest 2025',color:'var(--navy)'},
+    {date:'2026-01-10',name:'Le Denim Lab',color:'var(--brown)'},
+    {date:'2026-05-15',name:'Feaster Fest 2026',color:'var(--red)'},
+    {date:'2026-09-15',name:'GAAUL Live',color:'var(--navy)'}
+  ];
+  function renderCalWidget(){
+    const w=document.getElementById('cal-widget');
+    if(!w)return;
+    const y=calWidgetDate.getFullYear(),m=calWidgetDate.getMonth();
+    const today=new Date();
+    const months_fr=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+    const months_en=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const days_fr=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+    const days_en=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    const monthName=lang==='fr'?months_fr[m]:months_en[m];
+    const dayNames=lang==='fr'?days_fr:days_en;
+    const firstDay=new Date(y,m,1).getDay();
+    const startDay=firstDay===0?6:firstDay-1;
+    const daysInMonth=new Date(y,m+1,0).getDate();
+    const prevDays=new Date(y,m,0).getDate();
+    const eventDates=CAL_EVENTS.filter(e=>{const d=new Date(e.date);return d.getFullYear()===y&&d.getMonth()===m;});
+    let html=`<div class="cal-widget-header"><div><span class="cal-widget-month">${monthName}</span> <span class="cal-widget-year">${y}</span></div><div class="cal-widget-nav"><button onclick="calNav(-1)">‹</button><button onclick="calNav(0)">${lang==='fr'?'Auj.':'Today'}</button><button onclick="calNav(1)">›</button></div></div>`;
+    html+='<div class="cal-grid">';
+    dayNames.forEach(d=>{html+=`<div class="cal-grid-head">${d}</div>`;});
+    for(let i=0;i<startDay;i++){html+=`<div class="cal-grid-day other">${prevDays-startDay+1+i}</div>`;}
+    for(let d=1;d<=daysInMonth;d++){
+      const isToday=d===today.getDate()&&m===today.getMonth()&&y===today.getFullYear();
+      const dateStr=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const hasEvent=eventDates.some(e=>e.date===dateStr);
+      let cls='cal-grid-day';
+      if(isToday)cls+=' today';
+      if(hasEvent)cls+=' event';
+      html+=`<div class="${cls}">${d}</div>`;
+    }
+    const totalCells=startDay+daysInMonth;
+    const remaining=totalCells%7===0?0:7-totalCells%7;
+    for(let i=1;i<=remaining;i++){html+=`<div class="cal-grid-day other">${i}</div>`;}
+    html+='</div>';
+    if(eventDates.length){
+      html+='<div class="cal-events-list">';
+      eventDates.forEach(e=>{
+        const d=new Date(e.date);
+        html+=`<div class="cal-event-row"><div class="cal-event-dot" style="background:${e.color}"></div><div class="cal-event-info"><div class="cal-event-name">${e.name}</div><div class="cal-event-date">${d.getDate()} ${monthName} ${y}</div></div></div>`;
+      });
+      html+='</div>';
+    }
+    w.innerHTML=html;
+  }
+  function calNav(dir){
+    if(dir===0){calWidgetDate=new Date();}
+    else{calWidgetDate.setMonth(calWidgetDate.getMonth()+dir);}
+    renderCalWidget();
+  }
+
+  /* Init calendar widget when page loads */
+  const origGoTo=goTo;
+  goTo=function(pageId){
+    origGoTo(pageId);
+    if(pageId==='calendrier'){renderCalWidget();}
+    closeMobileNav();
+  };
+  renderCalWidget();
 </script>
 </body>
 </html>
