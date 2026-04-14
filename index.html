@@ -568,9 +568,13 @@
     .nav-hamburger{display:flex;}
     .mobile-nav{display:block;}
     .nav-cta{display:none !important;}
-    .hero{grid-template-columns:1fr;padding:100px 24px 60px;}
-    .hero-right{display:none;}
-    .hero-left{padding:40px 24px;}
+    .hero{grid-template-columns:1fr;padding:100px 24px 0;min-height:auto;}
+    .hero-right{display:block;position:relative;height:auto;min-height:340px;margin-top:8px;}
+    .hero-right .art-collage{grid-template-rows:1fr;height:100%;min-height:340px;}
+    .hero-right .art-bottom,.hero-right .art-main-label,.hero-right .art-main-overlay{display:none;}
+    .hero-right .art-main{background:linear-gradient(180deg,transparent 0%,rgba(90,26,10,0.35) 60%,rgba(90,26,10,0.55) 100%);}
+    .hero-portrait{height:100%;max-height:440px;width:auto;max-width:90%;left:50%;right:auto;bottom:0;transform:translateX(-50%);object-position:bottom center;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.5));}
+    .hero-left{padding:40px 24px 32px;}
     .hero-stats{gap:20px;flex-wrap:wrap;}
     .stat-n{font-size:24px;}
     .personas-grid,.ev-grid,.impact-grid,.hc-grid,.ft-top,.gp-grid{grid-template-columns:1fr;}
@@ -617,8 +621,11 @@
     .nav-afro{font-size:15px;}
     .nav-avenir{font-size:16px;}
     .mobile-nav{top:56px;}
-    .hero{padding:80px 16px 48px;}
-    .hero-left{padding:20px 0;}
+    .hero{padding:80px 16px 0;}
+    .hero-left{padding:20px 0 24px;}
+    .hero-right{min-height:300px;}
+    .hero-right .art-collage{min-height:300px;}
+    .hero-portrait{max-height:360px;max-width:95%;}
     .hero-title{letter-spacing:-1.5px;}
     .hero-sub{font-size:14px;}
     .hero-actions{flex-direction:column;gap:10px;}
@@ -655,7 +662,10 @@
   }
   /* Landscape phone */
   @media(max-height:500px) and (orientation:landscape){
-    .hero{min-height:auto;padding-top:72px;padding-bottom:32px;}
+    .hero{min-height:auto;padding-top:72px;padding-bottom:32px;grid-template-columns:3fr 2fr;}
+    .hero-right{min-height:auto;height:auto;margin-top:0;}
+    .hero-right .art-collage{min-height:auto;}
+    .hero-portrait{max-height:none;height:100%;}
     .inner-hero,.gaaul-hero{min-height:auto;padding-top:72px;padding-bottom:32px;}
     .hero-stats{margin-top:24px;}
   }
