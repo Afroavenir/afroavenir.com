@@ -190,16 +190,11 @@
   .stat-l{font-size:11px;color:rgba(255,255,255,0.35);margin-top:3px;text-transform:uppercase;letter-spacing:0.1em;line-height:1.4;}
   /* hero right collage */
   .hero-right{position:relative;overflow:hidden;}
-  .art-collage{width:100%;height:100%;display:grid;grid-template-rows:55% 45%;}
-  .art-main{position:relative;overflow:hidden;background:linear-gradient(145deg,#1a0806,#3d1208,#5a1a0a);}
+  .art-collage{width:100%;height:100%;display:block;position:relative;}
+  .art-main{position:absolute;inset:0;overflow:hidden;background:linear-gradient(145deg,#1a0806,#3d1208,#5a1a0a);}
   .art-main-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--dark) 0%,transparent 30%);}
-  .hero-portrait{position:absolute;right:0;bottom:0;height:112%;width:auto;max-width:100%;object-fit:contain;object-position:bottom right;pointer-events:none;user-select:none;filter:drop-shadow(-12px 12px 28px rgba(0,0,0,0.55));z-index:2;}
-  .art-main-label{position:absolute;bottom:16px;left:16px;background:rgba(25,6,1,0.8);padding:4px 12px;border-radius:20px;font-size:10px;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase;}
-  .art-bottom{display:grid;grid-template-columns:1fr 1fr;}
-  .art-sm{position:relative;overflow:hidden;border-left:1px solid rgba(25,6,1,0.3);border-top:1px solid rgba(25,6,1,0.3);display:flex;align-items:center;justify-content:center;}
-  .art-sm-1{background:linear-gradient(145deg,#2d1a06,#8B4513);}
-  .art-sm-2{background:linear-gradient(145deg,#0A2B47,#1a5a3a);}
-  .art-sm-content{text-align:center;padding:20px;}
+  .hero-portrait{position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom right;pointer-events:none;user-select:none;filter:drop-shadow(-12px 12px 28px rgba(0,0,0,0.55));z-index:2;}
+  .art-main-label{position:absolute;bottom:16px;left:16px;background:rgba(25,6,1,0.8);padding:4px 12px;border-radius:20px;font-size:10px;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase;z-index:3;}
   /* scrolling band */
   .slogan-band{background:var(--red);padding:18px 0;overflow:hidden;}
   .slogan-scroll{display:flex;gap:64px;white-space:nowrap;animation:scrollx 22s linear infinite;}
@@ -569,9 +564,9 @@
     .mobile-nav{display:block;}
     .nav-cta{display:none !important;}
     .hero{grid-template-columns:1fr;padding:100px 24px 0;min-height:auto;}
-    .hero-right{display:block;position:relative;height:auto;min-height:340px;margin-top:8px;}
-    .hero-right .art-collage{grid-template-rows:1fr;height:100%;min-height:340px;}
-    .hero-right .art-bottom,.hero-right .art-main-label,.hero-right .art-main-overlay{display:none;}
+    .hero-right{display:block;position:relative;height:auto;min-height:360px;margin-top:8px;}
+    .hero-right .art-collage{height:360px;}
+    .hero-right .art-main-label,.hero-right .art-main-overlay{display:none;}
     .hero-right .art-main{background:linear-gradient(180deg,transparent 0%,rgba(90,26,10,0.35) 60%,rgba(90,26,10,0.55) 100%);}
     .hero-portrait{height:100%;max-height:440px;width:auto;max-width:90%;left:50%;right:auto;bottom:0;transform:translateX(-50%);object-position:bottom center;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.5));}
     .hero-left{padding:40px 24px 32px;}
@@ -623,8 +618,8 @@
     .mobile-nav{top:56px;}
     .hero{padding:80px 16px 0;}
     .hero-left{padding:20px 0 24px;}
-    .hero-right{min-height:300px;}
-    .hero-right .art-collage{min-height:300px;}
+    .hero-right{min-height:320px;}
+    .hero-right .art-collage{height:320px;}
     .hero-portrait{max-height:360px;max-width:95%;}
     .hero-title{letter-spacing:-1.5px;}
     .hero-sub{font-size:14px;}
@@ -664,7 +659,7 @@
   @media(max-height:500px) and (orientation:landscape){
     .hero{min-height:auto;padding-top:72px;padding-bottom:32px;grid-template-columns:3fr 2fr;}
     .hero-right{min-height:auto;height:auto;margin-top:0;}
-    .hero-right .art-collage{min-height:auto;}
+    .hero-right .art-collage{height:auto;min-height:auto;}
     .hero-portrait{max-height:none;height:100%;}
     .inner-hero,.gaaul-hero{min-height:auto;padding-top:72px;padding-bottom:32px;}
     .hero-stats{margin-top:24px;}
@@ -914,35 +909,9 @@
     <div class="hero-right">
       <div class="art-collage">
         <div class="art-main">
-          <div style="width:100%;height:100%;background:linear-gradient(145deg,#1a0806,#3d1208,#5a1a0a);"></div>
           <div class="art-main-overlay"></div>
           <img class="hero-portrait" src="images/hero-portrait.webp" alt="" loading="eager" decoding="async">
           <div class="art-main-label">GAAUL — Arts afro-urbains</div>
-        </div>
-        <div class="art-bottom">
-          <div class="art-sm art-sm-1">
-            <div class="art-sm-content">
-              <div style="font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">Nov 2024</div>
-              <div style="font-size:18px;font-weight:900;color:white;line-height:1.1;">Oser<br>Entreprendre</div>
-              <div style="width:24px;height:2px;background:var(--red);margin:10px auto 0;"></div>
-            </div>
-          </div>
-          <div class="art-sm art-sm-2">
-            <div style="text-align:center;padding:20px;">
-              <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(0 50 50)"/>
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(60 50 50)"/>
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(120 50 50)"/>
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(180 50 50)"/>
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(240 50 50)"/>
-                <ellipse cx="50" cy="11" rx="5" ry="9" fill="rgba(241,79,53,0.5)" transform="rotate(300 50 50)"/>
-                <circle cx="50" cy="50" r="19" fill="rgba(25,6,1,0.7)" stroke="rgba(241,79,53,0.5)" stroke-width="1.5"/>
-                <ellipse cx="43" cy="48" rx="3" ry="3.5" fill="rgba(241,79,53,0.8)"/>
-                <ellipse cx="57" cy="48" rx="3" ry="3.5" fill="rgba(241,79,53,0.8)"/>
-                <line x1="44" y1="60" x2="56" y2="60" stroke="rgba(241,79,53,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
     </div>
