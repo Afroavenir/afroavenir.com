@@ -225,19 +225,15 @@
   .gallery-prev{padding:100px 48px;background:var(--cream);}
   .gp-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;}
   .gp-sub{font-size:13px;color:#888;max-width:280px;line-height:1.6;text-align:right;}
-  .gp-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-bottom:32px;}
-  .gp-item{position:relative;overflow:hidden;cursor:pointer;border-radius:4px;}
+  .gp-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:206px;gap:8px;margin-bottom:32px;}
+  .gp-item{position:relative;overflow:hidden;cursor:pointer;border-radius:4px;background:#1a0806;}
   .gp-item:first-child{grid-row:span 2;}
-  .gp-item-bg{width:100%;transition:transform 0.5s;}
-  .gp-item:hover .gp-item-bg{transform:scale(1.04);}
-  .gp1{background:linear-gradient(145deg,#2D1B4E,#F14F35);min-height:420px;}
-  .gp2{background:linear-gradient(145deg,#0A2B47,#AD8A76);min-height:200px;}
-  .gp3{background:linear-gradient(145deg,#190601,#F14F35);min-height:200px;}
-  .gp4{background:linear-gradient(145deg,#1a3a2a,#AD8A76);min-height:200px;}
-  .gp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,6,1,0.85) 0%,transparent 50%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;}
-  .gp-item:hover .gp-overlay{opacity:1;}
-  .gp-name{font-size:13px;font-weight:700;color:white;}
-  .gp-price{font-size:12px;color:var(--red);font-weight:600;margin-top:2px;}
+  .gp-item-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s;display:block;}
+  .gp-item:hover .gp-item-img{transform:scale(1.04);}
+  .gp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,6,1,0.9) 0%,rgba(25,6,1,0.4) 35%,transparent 65%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;transition:background 0.3s;}
+  .gp-item:hover .gp-overlay{background:linear-gradient(to top,rgba(25,6,1,0.95) 0%,rgba(25,6,1,0.55) 45%,rgba(25,6,1,0.1) 100%);}
+  .gp-name{font-size:14px;font-weight:700;color:white;letter-spacing:-0.1px;}
+  .gp-price{font-size:12px;color:var(--red);font-weight:600;margin-top:3px;letter-spacing:0.02em;}
   /* impact */
   .impact{padding:100px 48px;background:var(--dark);}
   .impact .s-title{color:white;}
@@ -975,10 +971,10 @@
       <p class="gp-sub"><span class="fr">80% de chaque vente va directement à l'artiste.</span><span class="en">80% of every sale goes directly to the artist.</span></p>
     </div>
     <div class="gp-grid">
-      <div class="gp-item" onclick="goTo('gaaul')"><div class="gp-item-bg gp1"></div><div class="gp-overlay"><div class="gp-name">Collection GAAUL</div><div class="gp-price"><span class="fr-i">Sur demande</span><span class="en-i">On request</span></div></div></div>
-      <div class="gp-item" onclick="goTo('gaaul')"><div class="gp-item-bg gp2"></div><div class="gp-overlay"><div class="gp-name">La Reine</div><div class="gp-price">380 $</div></div></div>
-      <div class="gp-item" onclick="goTo('gaaul')"><div class="gp-item-bg gp3"></div><div class="gp-overlay"><div class="gp-name">Héritage</div><div class="gp-price">220 $</div></div></div>
-      <div class="gp-item" onclick="goTo('gaaul')"><div class="gp-item-bg gp4"></div><div class="gp-overlay"><div class="gp-name">Racines</div><div class="gp-price">560 $</div></div></div>
+      <div class="gp-item" onclick="goTo('gaaul')"><img class="gp-item-img" src="images/gaaul-collection.webp" alt="Collection GAAUL" loading="lazy" decoding="async"><div class="gp-overlay"><div class="gp-name">Collection GAAUL</div><div class="gp-price"><span class="fr-i">Sur demande</span><span class="en-i">On request</span></div></div></div>
+      <div class="gp-item" onclick="goTo('gaaul')"><img class="gp-item-img" src="images/gaaul-la-reine.webp" alt="La Reine" loading="lazy" decoding="async"><div class="gp-overlay"><div class="gp-name">La Reine</div><div class="gp-price">380 $</div></div></div>
+      <div class="gp-item" onclick="goTo('gaaul')"><img class="gp-item-img" src="images/gaaul-heritage.webp" alt="Héritage" loading="lazy" decoding="async"><div class="gp-overlay"><div class="gp-name">Héritage</div><div class="gp-price">220 $</div></div></div>
+      <div class="gp-item" onclick="goTo('gaaul')"><img class="gp-item-img" src="images/gaaul-racines.webp" alt="Racines" loading="lazy" decoding="async"><div class="gp-overlay"><div class="gp-name">Racines</div><div class="gp-price">560 $</div></div></div>
     </div>
     <div style="text-align:center;"><span class="btn-dark" onclick="goTo('gaaul')"><span class="fr-i">Voir toute la GAAUL</span><span class="en-i">View all of GAAUL</span></span></div>
   </section>
