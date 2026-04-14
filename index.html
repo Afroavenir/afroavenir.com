@@ -302,7 +302,8 @@
   #gaaul nav{background:rgba(10,6,3,0.95);border-bottom-color:rgba(255,255,255,0.06);}
   .gaaul-hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 72px 72px;background:var(--black);position:relative;overflow:hidden;}
   .gh-texture{position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(241,79,53,0.12) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(173,138,118,0.08) 0%,transparent 40%);}
-  .gh-quote{position:absolute;top:50%;right:72px;transform:translateY(-50%);text-align:right;max-width:360px;}
+  .gh-art{position:absolute;right:0;bottom:0;height:88%;width:auto;max-width:58%;object-fit:contain;object-position:bottom right;pointer-events:none;user-select:none;filter:drop-shadow(-18px 18px 40px rgba(0,0,0,0.65));z-index:1;}
+  .gh-quote{position:absolute;top:64px;right:72px;text-align:right;max-width:340px;z-index:2;}
   .gh-quote blockquote{font-size:17px;font-style:italic;color:rgba(255,255,255,0.2);line-height:1.7;font-weight:300;}
   .gh-quote cite{font-size:10px;color:var(--red);letter-spacing:0.15em;text-transform:uppercase;margin-top:12px;display:block;font-style:normal;}
   .filters-bar{position:sticky;top:68px;z-index:90;background:rgba(10,6,3,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 48px;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
@@ -590,6 +591,7 @@
     .home-contact{grid-template-columns:1fr;padding:60px 24px;}
     .quote-band{padding:48px 24px;}
     .gh-quote{display:none;}
+    .gh-art{height:62%;max-width:62%;opacity:0.55;filter:drop-shadow(-10px 10px 24px rgba(0,0,0,0.55));}
     .arow{grid-template-columns:48px 1fr 120px;padding:14px 24px;}
     .arow-hdr{grid-template-columns:48px 1fr 120px;padding:10px 24px;}
     .arow-disc,.arow-city{display:none;}
@@ -1101,6 +1103,7 @@
 <div class="page" id="gaaul" style="background:var(--black);">
   <section class="gaaul-hero">
     <div class="gh-texture"></div>
+    <img class="gh-art" src="images/gaaul-mona-lisa.webp" alt="" loading="eager" decoding="async">
     <div class="gh-quote">
       <blockquote class="fr">"Un artiste n'est pas payé pour son labeur, mais pour sa vision."</blockquote>
       <blockquote class="en">"An artist is not paid for his labor but for his vision."</blockquote>
