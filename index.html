@@ -651,6 +651,18 @@
     .cal-filter-bar{padding:0 16px !important;}
     .cal-yearly-wrap{padding:32px 16px !important;}
   }
+  /* Pricing grid responsive */
+  @media(max-width:1100px){
+    .pricing-grid{grid-template-columns:repeat(2,1fr) !important;}
+  }
+  @media(max-width:600px){
+    .pricing-grid{grid-template-columns:1fr !important;}
+    .pricing-grid>div{max-width:400px;margin:0 auto;width:100%;}
+  }
+  /* Candidature form responsive */
+  @media(max-width:600px){
+    .f-row{grid-template-columns:1fr !important;}
+  }
   /* Landscape phone */
   @media(max-height:500px) and (orientation:landscape){
     .hero{min-height:auto;padding-top:72px;padding-bottom:32px;grid-template-columns:3fr 2fr;}
@@ -712,89 +724,60 @@
     </div>
   </div>
 
-  <!-- DROPDOWN MENU -->
+  <!-- NAVIGATION -->
   <div class="nav-center">
 
-    <!-- GAAUL -->
+    <!-- ACCUEIL / HOME -->
     <div class="nav-item">
-      <span onclick="goTo('gaaul')" id="nl-gaaul">GAAUL <span class="nav-chevron">▾</span></span>
+      <a onclick="goTo('home')" id="nl-home"><span class="fr-i">Accueil</span><span class="en-i">Home</span></a>
+    </div>
+
+    <!-- GALERIE / GALLERY -->
+    <div class="nav-item">
+      <span onclick="goTo('gaaul')" id="nl-gaaul"><span class="fr-i">Galerie</span><span class="en-i">Gallery</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
-        <span class="nav-dropdown-label"><span class="fr-i">Galerie</span><span class="en-i">Gallery</span></span>
-        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg></span><div><div><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></div><div style="font-size:10px;opacity:0.5;">80% <span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div></div></span>
-        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1.5" width="12" height="13" rx="1"/><rect x="4" y="3.5" width="8" height="8" rx=".5"/><line x1="6" y1="14.5" x2="6" y2="13"/><line x1="10" y1="14.5" x2="10" y2="13"/></svg></span><span class="fr-i">Acquérir une œuvre</span><span class="en-i">Acquire a work</span></span>
-        <hr/>
-        <span onclick="goToContact('artiste')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><line x1="8" y1="5" x2="8" y2="11"/><line x1="5" y1="8" x2="11" y2="8"/></svg></span><span class="fr-i">Exposer sur la GAAUL</span><span class="en-i">Exhibit on GAAUL</span></span>
+        <span onclick="goTo('gaaul')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg></span><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></span>
+        <span onclick="goToContact('artiste')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><line x1="8" y1="5" x2="8" y2="11"/><line x1="5" y1="8" x2="11" y2="8"/></svg></span><span class="fr-i">Vendre sur la GAAUL</span><span class="en-i">Sell on GAAUL</span></span>
       </div>
     </div>
 
-    <!-- ARTISTES -->
+    <!-- ARTISTES / ARTISTS -->
     <div class="nav-item">
       <span onclick="goTo('repertoire')" id="nl-repertoire"><span class="fr-i">Artistes</span><span class="en-i">Artists</span> <span class="nav-chevron">▾</span></span>
       <div class="nav-dropdown">
-        <span class="nav-dropdown-label"><span class="fr-i">Répertoire</span><span class="en-i">Directory</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span><span class="fr-i">Tous les artistes</span><span class="en-i">All artists</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="2.5" r="1.5"/><path d="M5 7l3-1 2.5 4.5-3 2.5M4.5 15l2.5-2M11.5 15l-1.5-4"/></svg></span><span class="fr-i">Danse</span><span class="en-i">Dance</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13V4l8-2v8"/><circle cx="4.5" cy="13" r="1.5"/><circle cx="12.5" cy="10" r="1.5"/></svg></span><span class="fr-i">Musique</span><span class="en-i">Music</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2.5L5.5 9a2.1 2.1 0 103 3l6.5-7z"/><path d="M10.5 4.5l2 2"/></svg></span><span class="fr-i">Arts visuels</span><span class="en-i">Visual arts</span></span>
-        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 1.5L8 3l2.5-1.5"/><path d="M8 3v3"/><path d="M4 6h8l1 8H3z"/><line x1="6" y1="10" x2="10" y2="10"/></svg></span><span class="fr-i">Mode</span><span class="en-i">Fashion</span></span>
-        <hr/>
-        <span onclick="openModal('book','','')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7v13H4V4.5z"/><path d="M4 4.5L5 1.5"/><line x1="7" y1="5" x2="10" y2="5"/><line x1="7" y1="7.5" x2="10" y2="7.5"/><line x1="7" y1="10" x2="9" y2="10"/></svg></span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
+        <span onclick="goTo('repertoire')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span><span class="fr-i">Répertoire</span><span class="en-i">Directory</span></span>
+        <span onclick="goTo('reserver')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7v13H4V4.5z"/><path d="M4 4.5L5 1.5"/><line x1="7" y1="5" x2="10" y2="5"/><line x1="7" y1="7.5" x2="10" y2="7.5"/><line x1="7" y1="10" x2="9" y2="10"/></svg></span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
       </div>
     </div>
 
-    <!-- BÂTIR -->
+    <!-- RÉSERVER / BOOK -->
     <div class="nav-item">
-      <span onclick="goTo('batir')" id="nl-batir"><span class="fr-i">Bâtir Ensemble</span><span class="en-i">Build Together</span> <span class="nav-chevron">▾</span></span>
-      <div class="nav-dropdown wide">
-        <div class="nd-col">
-          <span class="nav-dropdown-label"><span class="fr-i">Services</span><span class="en-i">Services</span></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h12"/><path d="M4 14V6l4-4 4 4v8"/><line x1="8" y1="2" x2="8" y2="6"/><path d="M1 7l3-2"/><path d="M15 7l-3-2"/></svg></span><div><div><span class="fr-i">Direction artistique</span><span class="en-i">Artistic direction</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Festivals, galas, événements</span><span class="en-i">Festivals, galas, events</span></div></div></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 8.5c2-2 3.5-1 4.5 0s2.5 2 4.5 0"/><path d="M6.5 8.5c2-2 3.5-1 4.5 0s2.5 2 4.5 0"/><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/></svg></span><div><div><span class="fr-i">Médiation culturelle</span><span class="en-i">Cultural mediation</span></div></div></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3C6.5.5 1 1 1 5c0 5 7 9 7 9s7-4 7-9c0-4-5.5-4.5-7-2z"/></svg></span><div><div><span class="fr-i">Événements privés</span><span class="en-i">Private events</span></div><div style="font-size:10px;opacity:0.5;"><span class="fr-i">Mariages, anniversaires</span><span class="en-i">Weddings, birthdays</span></div></div></span>
-        </div>
-        <div class="nd-col">
-          <span class="nav-dropdown-label"><span class="fr-i">Démarrer</span><span class="en-i">Get started</span></span>
-          <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="10" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg></span><span class="fr-i">Demande de collaboration</span><span class="en-i">Collaboration request</span></span>
-          <span onclick="goTo('batir')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.5h5l1.5-2H14v11H2z"/><path d="M2 4.5V2.5h5l1.5 2"/></svg></span><span class="fr-i">Voir nos réalisations</span><span class="en-i">See our work</span></span>
-        </div>
-      </div>
+      <a onclick="goTo('reserver')" id="nl-reserver"><span class="fr-i">Réserver</span><span class="en-i">Book</span></a>
     </div>
 
-    <!-- APPELS -->
+    <!-- BÂTIR / BUILD -->
     <div class="nav-item">
-      <span onclick="goTo('appels')" id="nl-appels"><span class="fr-i">Appels à projets</span><span class="en-i">Open Calls</span> <span class="nav-chevron">▾</span></span>
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-label"><span class="fr-i">Pour les artistes</span><span class="en-i">For artists</span></span>
-        <span onclick="goTo('appels')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6h4l6-3v10l-6-3H2v-2z"/><path d="M14 6.5c1 .7 1 2.3 0 3"/></svg></span><span class="fr-i">Voir les appels ouverts</span><span class="en-i">View open calls</span></span>
-        <span onclick="openModal('apply','GAAUL 2025','Afroavenir')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 1.5l3.5 3.5L5.5 14H2v-3.5z"/><path d="M9.5 3l3.5 3.5"/></svg></span><span class="fr-i">Postuler — GAAUL 2025</span><span class="en-i">Apply — GAAUL 2025</span></span>
-        <hr/>
-        <span class="nav-dropdown-label"><span class="fr-i">Pour les institutions</span><span class="en-i">For institutions</span></span>
-        <span onclick="goToContact('appel')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2h12v3l-4 3 4 3v3H2V11l4-3-4-3z"/><line x1="6" y1="10" x2="10" y2="10"/></svg></span><span class="fr-i">Publier un appel</span><span class="en-i">Post a call</span></span>
-      </div>
+      <a onclick="goTo('batir')" id="nl-batir"><span class="fr-i">Bâtir</span><span class="en-i">Build</span></a>
     </div>
 
-    <!-- CALENDRIER -->
+    <!-- APPELS / OPEN CALLS -->
     <div class="nav-item">
-      <span onclick="goTo('calendrier')" id="nl-calendrier"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span> <span class="nav-chevron">▾</span></span>
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-label"><span class="fr-i">Événements</span><span class="en-i">Events</span></span>
-        <span onclick="goTo('calendrier')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5.5" y1="1" x2="5.5" y2="4.5"/><line x1="10.5" y1="1" x2="10.5" y2="4.5"/></svg></span><span class="fr-i">Tous les événements</span><span class="en-i">All events</span></span>
-        <span onclick="goTo('calendrier');setTimeout(()=>switchCal('upcoming'),50)"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,1.5 9.8,5.5 14,6 11,9 11.6,13.5 8,11.5 4.4,13.5 5,9 2,6 6.2,5.5"/></svg></span><span class="fr-i">Événements à venir</span><span class="en-i">Upcoming events</span></span>
-        <span onclick="goTo('calendrier');setTimeout(()=>switchCal('past'),50)"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2" width="13" height="4" rx="1"/><path d="M3 6v8h10V6"/><line x1="6.5" y1="9" x2="9.5" y2="9"/></svg></span><span class="fr-i">Événements passés</span><span class="en-i">Past events</span></span>
-        <hr/>
-        <span onclick="goToContact('institution')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="8" y1="9.5" x2="8" y2="12.5"/><line x1="6.5" y1="11" x2="9.5" y2="11"/></svg></span><span class="fr-i">Organiser un événement</span><span class="en-i">Organise an event</span></span>
-      </div>
+      <a onclick="goTo('appels')" id="nl-appels"><span class="fr-i">Appels</span><span class="en-i">Calls</span></a>
     </div>
 
-    <!-- À PROPOS -->
+    <!-- CALENDRIER / CALENDAR -->
     <div class="nav-item">
-      <span onclick="goTo('apropos')" id="nl-apropos"><span class="fr-i">À propos</span><span class="en-i">About</span> <span class="nav-chevron">▾</span></span>
-      <div class="nav-dropdown">
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 5v1h14V5z"/><line x1="3" y1="6" x2="3" y2="13"/><line x1="8" y1="6" x2="8" y2="13"/><line x1="13" y1="6" x2="13" y2="13"/><line x1="1" y1="13" x2="15" y2="13"/><line x1="1" y1="15" x2="15" y2="15"/></svg></span><span class="fr-i">Notre histoire</span><span class="en-i">Our story</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1C5.8 1 4 2.8 4 5c0 1.5.8 2.8 2 3.5V11h4V8.5c1.2-.7 2-2 2-3.5 0-2.2-1.8-4-4-4z"/><line x1="6" y1="13" x2="10" y2="13"/><line x1="6.5" y1="15" x2="9.5" y2="15"/></svg></span><span class="fr-i">Mission & valeurs</span><span class="en-i">Mission & values</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="4.5" r="2.2"/><circle cx="10.5" cy="4.5" r="2.2"/><path d="M1 14c0-2.5 2-4.5 4.5-4.5 1 0 2 .3 2.8.9"/><path d="M8.2 10.4c.8-.6 1.7-.9 2.8-.9 2.5 0 4.5 2 4.5 4.5"/></svg></span><span class="fr-i">L'équipe</span><span class="en-i">The team</span></span>
-        <span onclick="goTo('apropos')"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7C4 7 2 5 2 5s2-2 4.5-2a4 4 0 012.3.7"/><path d="M9.5 9C12 9 14 11 14 11s-2 2-4.5 2a4 4 0 01-2.3-.7"/><line x1="6.5" y1="9.5" x2="9.5" y2="6.5"/></svg></span><span class="fr-i">Partenaires</span><span class="en-i">Partners</span></span>
-      </div>
+      <a onclick="goTo('calendrier')" id="nl-calendrier"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span></a>
+    </div>
+
+    <!-- À PROPOS / ABOUT -->
+    <div class="nav-item">
+      <a onclick="goTo('apropos')" id="nl-apropos"><span class="fr-i">À propos</span><span class="en-i">About</span></a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="nav-item">
+      <a onclick="goTo('contact')" id="nl-contact">Contact</a>
     </div>
 
   </div>
@@ -807,7 +790,7 @@
       </button>
     </div>
     <button class="lang-toggle" onclick="toggleLang()">FR / EN</button>
-    <span class="nav-cta" onclick="goTo('contact')"><span class="fr-i">Nous contacter</span><span class="en-i">Contact us</span></span>
+    <span class="nav-cta" onclick="goTo('candidature')"><span class="fr-i">Rejoindre</span><span class="en-i">Join</span></span>
     <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -817,47 +800,35 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)">GAAUL <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('gaaul');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><circle cx="5.5" cy="6" r="1.5"/><path d="M14.5 11l-3.5-4-2.5 3-2-1.5L2 11"/></svg></span><span class="fr-i">Parcourir les œuvres</span><span class="en-i">Browse artworks</span></span>
-      <span onclick="goTo('gaaul');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1.5" width="12" height="13" rx="1"/><rect x="4" y="3.5" width="8" height="8" rx=".5"/><line x1="6" y1="14.5" x2="6" y2="13"/><line x1="10" y1="14.5" x2="10" y2="13"/></svg></span><span class="fr-i">Acquérir une œuvre</span><span class="en-i">Acquire a work</span></span>
-      <span onclick="goToContact('artiste');closeMobileNav()"><span class="nav-dropdown-icon di-brown"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="1.5"/><line x1="8" y1="5" x2="8" y2="11"/><line x1="5" y1="8" x2="11" y2="8"/></svg></span><span class="fr-i">Exposer sur la GAAUL</span><span class="en-i">Exhibit on GAAUL</span></span>
-    </div>
+    <button onclick="goTo('home');closeMobileNav()" style="border-bottom:1px solid rgba(25,6,1,0.06);"><span class="fr-i">Accueil</span><span class="en-i">Home</span></button>
   </div>
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)"><span class="fr-i">Artistes</span><span class="en-i">Artists</span> <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('repertoire');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="5" r="2.8"/><path d="M2.5 14.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span><span class="fr-i">Tous les artistes</span><span class="en-i">All artists</span></span>
-      <span onclick="openModal('book','','');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7v13H4V4.5z"/><path d="M4 4.5L5 1.5"/><line x1="7" y1="5" x2="10" y2="5"/><line x1="7" y1="7.5" x2="10" y2="7.5"/><line x1="7" y1="10" x2="9" y2="10"/></svg></span><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an artist</span></span>
-    </div>
+    <button onclick="goTo('gaaul');closeMobileNav()"><span class="fr-i">Galerie</span><span class="en-i">Gallery</span></button>
   </div>
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)"><span class="fr-i">Bâtir Ensemble</span><span class="en-i">Build Together</span> <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('batir');closeMobileNav()"><span class="nav-dropdown-icon di-navy"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14h12"/><path d="M4 14V6l4-4 4 4v8"/><line x1="8" y1="2" x2="8" y2="6"/></svg></span><span class="fr-i">Direction artistique</span><span class="en-i">Artistic direction</span></span>
-      <span onclick="goToContact('institution');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="13" height="10" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg></span><span class="fr-i">Demande de collaboration</span><span class="en-i">Collaboration request</span></span>
-    </div>
+    <button onclick="goTo('repertoire');closeMobileNav()"><span class="fr-i">Artistes</span><span class="en-i">Artists</span></button>
   </div>
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)"><span class="fr-i">Appels à projets</span><span class="en-i">Open Calls</span> <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('appels');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6h4l6-3v10l-6-3H2v-2z"/><path d="M14 6.5c1 .7 1 2.3 0 3"/></svg></span><span class="fr-i">Voir les appels ouverts</span><span class="en-i">View open calls</span></span>
-    </div>
+    <button onclick="goTo('reserver');closeMobileNav()"><span class="fr-i">Réserver un artiste</span><span class="en-i">Book an Artist</span></button>
   </div>
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span> <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('calendrier');closeMobileNav()"><span class="nav-dropdown-icon di-red"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="1.5"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5.5" y1="1" x2="5.5" y2="4.5"/><line x1="10.5" y1="1" x2="10.5" y2="4.5"/></svg></span><span class="fr-i">Tous les événements</span><span class="en-i">All events</span></span>
-    </div>
+    <button onclick="goTo('batir');closeMobileNav()"><span class="fr-i">Bâtir Ensemble</span><span class="en-i">Build Together</span></button>
   </div>
   <div class="mobile-nav-item">
-    <button onclick="toggleMobSub(this)"><span class="fr-i">À propos</span><span class="en-i">About</span> <span class="mob-chevron">▾</span></button>
-    <div class="mobile-nav-sub">
-      <span onclick="goTo('apropos');closeMobileNav()"><span class="nav-dropdown-icon di-dark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L1 5v1h14V5z"/><line x1="3" y1="6" x2="3" y2="13"/><line x1="8" y1="6" x2="8" y2="13"/><line x1="13" y1="6" x2="13" y2="13"/><line x1="1" y1="13" x2="15" y2="13"/></svg></span><span class="fr-i">Notre histoire</span><span class="en-i">Our story</span></span>
-    </div>
+    <button onclick="goTo('appels');closeMobileNav()"><span class="fr-i">Appels à projets</span><span class="en-i">Open Calls</span></button>
   </div>
-  <div class="mobile-nav-cta">
-    <span class="nav-cta" onclick="goTo('contact');closeMobileNav()"><span class="fr-i">Nous contacter</span><span class="en-i">Contact us</span></span>
+  <div class="mobile-nav-item">
+    <button onclick="goTo('calendrier');closeMobileNav()"><span class="fr-i">Calendrier</span><span class="en-i">Calendar</span></button>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="goTo('apropos');closeMobileNav()"><span class="fr-i">À propos</span><span class="en-i">About</span></button>
+  </div>
+  <div class="mobile-nav-item">
+    <button onclick="goTo('contact');closeMobileNav()">Contact</button>
+  </div>
+  <div class="mobile-nav-cta" style="display:flex;flex-direction:column;gap:10px;">
+    <span class="nav-cta" onclick="goTo('candidature');closeMobileNav()" style="display:block;text-align:center;"><span class="fr-i">Rejoindre comme artiste</span><span class="en-i">Join as an Artist</span></span>
+    <span class="btn-ghost-w" onclick="goTo('adhesion');closeMobileNav()" style="display:block;text-align:center;border-color:rgba(25,6,1,0.15);color:var(--dark);font-size:13px;padding:12px 24px;"><span class="fr-i">Voir les forfaits</span><span class="en-i">See plans</span></span>
   </div>
 </div>
 
