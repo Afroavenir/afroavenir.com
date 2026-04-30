@@ -659,9 +659,10 @@
     .pricing-grid{grid-template-columns:1fr !important;}
     .pricing-grid>div{max-width:400px;margin:0 auto;width:100%;}
   }
-  /* Candidature form responsive */
+  /* Candidature form + booking grids responsive */
   @media(max-width:600px){
     .f-row{grid-template-columns:1fr !important;}
+    #reserver [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
   }
   /* Landscape phone */
   @media(max-height:500px) and (orientation:landscape){
@@ -1698,6 +1699,756 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════
+     RÉSERVER UN ARTISTE
+══════════════════════════════════ -->
+<div class="page" id="reserver">
+  <section class="inner-hero" style="background:var(--dark);">
+    <div class="ih-bg" aria-hidden="true">AA</div>
+    <div class="ih-eyebrow"><span class="fr-i">Services</span><span class="en-i">Services</span></div>
+    <h1 class="ih-title"><span class="fr-i">Réserver<br>un artiste.</span><span class="en-i">Book<br>an artist.</span></h1>
+    <p class="ih-sub"><span class="fr-i">Trouvez le talent parfait pour votre événement — Afroavenir gère la coordination de A à Z.</span><span class="en-i">Find the perfect talent for your event — Afroavenir handles coordination from A to Z.</span></p>
+  </section>
+  <div class="page-bar">
+    <span class="page-bar-back" onclick="goTo('home')">&#8592;&nbsp;<span class="fr-i">Retour</span><span class="en-i">Back</span></span>
+    <span class="page-bar-title"><span class="fr-i">Réservation</span><span class="en-i">Booking</span></span>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div style="background:var(--cream);padding:80px 32px;">
+    <div style="max-width:900px;margin:0 auto;">
+      <p class="s-eyebrow"><span class="fr-i">Comment ça marche</span><span class="en-i">How it works</span></p>
+      <h2 class="s-title"><span class="fr-i">3 étapes simples</span><span class="en-i">3 simple steps</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;">
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:900;color:white;">1</span></div>
+          <h3 style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Décrivez votre besoin</span><span class="en-i">Describe your need</span></h3>
+          <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Type d'événement, date, lieu et budget.</span><span class="en-i">Event type, date, venue and budget.</span></p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:900;color:white;">2</span></div>
+          <h3 style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:8px;"><span class="fr-i">On vous propose des artistes</span><span class="en-i">We suggest artists</span></h3>
+          <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Une sélection adaptée à votre contexte et budget.</span><span class="en-i">A curated selection matching your context and budget.</span></p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:900;color:white;">3</span></div>
+          <h3 style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Confirmez et profitez</span><span class="en-i">Confirm and enjoy</span></h3>
+          <p style="font-size:13px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">On s'occupe de la logistique et du contrat.</span><span class="en-i">We handle logistics and the contract.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT TYPES -->
+  <div style="background:white;padding:80px 32px;">
+    <div style="max-width:900px;margin:0 auto;">
+      <p class="s-eyebrow"><span class="fr-i">Pour qui</span><span class="en-i">For whom</span></p>
+      <h2 class="s-title"><span class="fr-i">Tous types de clients</span><span class="en-i">All client types</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;">
+        <div style="background:var(--dark);padding:40px 32px;">
+          <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px;"></div>
+          <h3 style="font-size:17px;font-weight:800;color:white;margin-bottom:8px;"><span class="fr-i">Institutions</span><span class="en-i">Institutions</span></h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;"><span class="fr-i">Villes, écoles, musées, organismes culturels.</span><span class="en-i">Cities, schools, museums, cultural organizations.</span></p>
+        </div>
+        <div style="background:var(--navy);padding:40px 32px;">
+          <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px;"></div>
+          <h3 style="font-size:17px;font-weight:800;color:white;margin-bottom:8px;"><span class="fr-i">Entreprises</span><span class="en-i">Businesses</span></h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;"><span class="fr-i">Galas, conférences, team building, lancements.</span><span class="en-i">Galas, conferences, team building, launches.</span></p>
+        </div>
+        <div style="background:#300E05;padding:40px 32px;">
+          <div style="width:32px;height:2px;background:var(--red);margin-bottom:20px;"></div>
+          <h3 style="font-size:17px;font-weight:800;color:white;margin-bottom:8px;"><span class="fr-i">Particuliers</span><span class="en-i">Individuals</span></h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;"><span class="fr-i">Mariages, anniversaires, événements privés.</span><span class="en-i">Weddings, birthdays, private events.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div style="background:var(--cream);padding:80px 32px;">
+    <div style="max-width:660px;margin:0 auto;">
+      <p class="s-eyebrow"><span class="fr-i">Demande de réservation</span><span class="en-i">Booking request</span></p>
+      <h2 class="s-title"><span class="fr-i">Décrivez votre événement</span><span class="en-i">Describe your event</span></h2>
+      <div style="background:white;padding:48px;border:1px solid rgba(25,6,1,0.07);margin-top:40px;" id="book-form-wrap">
+        <div id="book-fields">
+          <div class="f-row"><input class="f-in" type="text" placeholder="Prénom / First name"/><input class="f-in" type="text" placeholder="Nom / Last name"/></div>
+          <input class="f-in" type="text" placeholder="Organisation / Institution" style="width:100%;"/>
+          <div class="f-row"><input class="f-in" type="email" placeholder="Courriel / Email"/><input class="f-in" type="tel" placeholder="Téléphone / Phone"/></div>
+          <select class="f-sel" style="width:100%;">
+            <option value="" disabled selected><span class="fr-i">Type d'événement</span> / Event type</option>
+            <option>Festival / Concert</option>
+            <option>Gala / Soirée corporative</option>
+            <option>Mariage / Wedding</option>
+            <option>Anniversaire / Birthday</option>
+            <option>Conférence / Panel</option>
+            <option>Atelier / Workshop</option>
+            <option>Autre / Other</option>
+          </select>
+          <select class="f-sel" style="width:100%;">
+            <option value="" disabled selected><span class="fr-i">Discipline recherchée</span> / Discipline needed</option>
+            <option>DJ / Musique / Music</option>
+            <option>Danse / Dance</option>
+            <option>Arts visuels / Visual arts</option>
+            <option>MC / Animation</option>
+            <option>Performance / Live painting</option>
+            <option>Photographie / Photography</option>
+            <option>Plusieurs / Multiple</option>
+          </select>
+          <div class="f-row"><input class="f-in" type="text" placeholder="Date / Période"/><input class="f-in" type="text" placeholder="Budget approximatif"/></div>
+          <input class="f-in" type="text" placeholder="Lieu / Venue" style="width:100%;"/>
+          <textarea class="f-ta" style="width:100%;" placeholder="Décrivez votre événement et vos besoins... / Describe your event and needs..."></textarea>
+          <button class="f-sub-btn" onclick="document.getElementById('book-fields').style.display='none';document.getElementById('book-success').classList.add('on');"><span class="fr-i">Envoyer ma demande</span><span class="en-i">Send my request</span></button>
+          <p class="f-note"><span class="fr-i">Réponse dans les 48h.</span><span class="en-i">Response within 48h.</span></p>
+        </div>
+        <div class="success-box" id="book-success"><div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 style="font-size:20px;font-weight:900;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Demande envoyée !</span><span class="en-i">Request sent!</span></h3><p style="font-size:14px;color:rgba(25,6,1,0.45);line-height:1.6;"><span class="fr-i">On vous contacte dans les 48h.</span><span class="en-i">We'll contact you within 48h.</span></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div style="background:var(--dark);padding:64px 32px;text-align:center;">
+    <h2 style="font-size:clamp(24px,3.5vw,40px);font-weight:900;color:white;letter-spacing:-1px;margin-bottom:12px;"><span class="fr-i">Vous êtes artiste ?</span><span class="en-i">Are you an artist?</span></h2>
+    <p style="font-size:14px;color:rgba(255,255,255,0.4);max-width:400px;margin:0 auto 24px;line-height:1.7;"><span class="fr-i">Rejoignez le répertoire et recevez des demandes de réservation.</span><span class="en-i">Join the directory and receive booking requests.</span></p>
+    <span class="btn-red" onclick="goTo('candidature')" style="font-size:14px;padding:14px 36px;"><span class="fr-i">Postuler</span><span class="en-i">Apply</span></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     MEMBERSHIP PLANS
+══════════════════════════════════ -->
+<div class="page" id="adhesion">
+  <section class="inner-hero" style="background:var(--dark);">
+    <div class="ih-bg" aria-hidden="true">AA</div>
+    <div class="ih-eyebrow"><span class="fr-i">Pour les artistes</span><span class="en-i">For Artists</span></div>
+    <h1 class="ih-title"><span class="fr-i">Grandis.<br>Garde plus.</span><span class="en-i">Grow.<br>Keep more.</span></h1>
+    <p class="ih-sub"><span class="fr-i">Plus tu grandis avec Afroavenir, plus tu gardes de revenus. Choisis le forfait qui correspond à ta réalité.</span><span class="en-i">The more you grow with Afroavenir, the more revenue you keep. Choose the plan that fits your reality.</span></p>
+  </section>
+
+  <div class="page-bar">
+    <span class="page-bar-back" onclick="goTo('home')">&#8592;&nbsp;<span class="fr-i">Retour</span><span class="en-i">Back</span></span>
+    <span class="page-bar-title"><span class="fr-i">Forfaits artistes</span><span class="en-i">Artist Plans</span></span>
+  </div>
+
+  <!-- PRICING GRID -->
+  <div style="background:var(--cream);padding:80px 32px 60px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p class="s-eyebrow"><span class="fr-i">Forfaits</span><span class="en-i">Plans</span></p>
+        <h2 class="s-title"><span class="fr-i">Plus tu grandis, plus tu gardes</span><span class="en-i">The more you grow, the more you keep</span></h2>
+      </div>
+
+      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+
+        <!-- TIER 1: DÉCOUVERTE -->
+        <div style="background:white;border:1px solid rgba(25,6,1,0.08);border-radius:12px;padding:36px 28px;display:flex;flex-direction:column;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.35);margin-bottom:8px;">Découverte / Discovery</div>
+          <div style="font-size:36px;font-weight:900;color:var(--dark);letter-spacing:-1.5px;margin-bottom:4px;"><span class="fr-i">Gratuit</span><span class="en-i">Free</span></div>
+          <div style="font-size:12px;color:rgba(25,6,1,0.4);margin-bottom:24px;"><span class="fr-i">Pour les artistes en début de parcours</span><span class="en-i">For early-stage artists</span></div>
+          <div style="background:rgba(241,79,53,0.06);border-radius:8px;padding:16px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:32px;font-weight:900;color:var(--red);">75%</div>
+            <div style="font-size:11px;color:rgba(25,6,1,0.45);margin-top:2px;"><span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div>
+          </div>
+          <ul style="list-style:none;flex:1;margin-bottom:28px;">
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Profil de base</span><span class="en-i">Basic profile</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Jusqu'à 5 œuvres</span><span class="en-i">Up to 5 uploads</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Vente + réservations</span><span class="en-i">Sell + receive bookings</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Appels ouverts publics</span><span class="en-i">Public open calls</span></li>
+          </ul>
+          <span class="btn-dark" onclick="goTo('candidature')" style="text-align:center;width:100%;padding:12px 24px;font-size:13px;"><span class="fr-i">Commencer</span><span class="en-i">Get started</span></span>
+        </div>
+
+        <!-- TIER 2: ÉMERGENCE -->
+        <div style="background:white;border:2px solid var(--red);border-radius:12px;padding:36px 28px;display:flex;flex-direction:column;position:relative;">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--red);color:white;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 16px;border-radius:20px;"><span class="fr-i">Recommandé</span><span class="en-i">Recommended</span></div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.35);margin-bottom:8px;">Émergence / Emerging</div>
+          <div style="font-size:36px;font-weight:900;color:var(--dark);letter-spacing:-1.5px;margin-bottom:4px;">12$<span style="font-size:16px;font-weight:500;color:rgba(25,6,1,0.4);">/mois</span></div>
+          <div style="font-size:12px;color:rgba(25,6,1,0.4);margin-bottom:24px;"><span class="fr-i">Pour les artistes émergents</span><span class="en-i">For emerging artists</span></div>
+          <div style="background:rgba(241,79,53,0.06);border-radius:8px;padding:16px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:32px;font-weight:900;color:var(--red);">80%</div>
+            <div style="font-size:11px;color:rgba(25,6,1,0.45);margin-top:2px;"><span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div>
+          </div>
+          <ul style="list-style:none;flex:1;margin-bottom:28px;">
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Profil étendu</span><span class="en-i">Expanded profile</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Jusqu'à 20 œuvres</span><span class="en-i">Up to 20 uploads</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Analytiques de base</span><span class="en-i">Basic analytics</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Badge Artiste émergent</span><span class="en-i">Emerging Artist badge</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Meilleure visibilité</span><span class="en-i">Better visibility</span></li>
+          </ul>
+          <span class="btn-red" onclick="goTo('candidature')" style="text-align:center;width:100%;padding:12px 24px;font-size:13px;"><span class="fr-i">Choisir</span><span class="en-i">Choose</span></span>
+        </div>
+
+        <!-- TIER 3: PRO CRÉATIF -->
+        <div style="background:white;border:1px solid rgba(25,6,1,0.08);border-radius:12px;padding:36px 28px;display:flex;flex-direction:column;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(25,6,1,0.35);margin-bottom:8px;">Pro Créatif / Creative Pro</div>
+          <div style="font-size:36px;font-weight:900;color:var(--dark);letter-spacing:-1.5px;margin-bottom:4px;">18$<span style="font-size:16px;font-weight:500;color:rgba(25,6,1,0.4);">/mois</span></div>
+          <div style="font-size:12px;color:rgba(25,6,1,0.4);margin-bottom:24px;"><span class="fr-i">Pour les artistes actifs</span><span class="en-i">For active working artists</span></div>
+          <div style="background:rgba(241,79,53,0.06);border-radius:8px;padding:16px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:32px;font-weight:900;color:var(--red);">85%</div>
+            <div style="font-size:11px;color:rgba(25,6,1,0.45);margin-top:2px;"><span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div>
+          </div>
+          <ul style="list-style:none;flex:1;margin-bottom:28px;">
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Œuvres illimitées</span><span class="en-i">Unlimited uploads</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Rotation artiste vedette</span><span class="en-i">Featured artist rotation</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Fiches services / forfaits</span><span class="en-i">Service/package listings</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Priorité opportunités payantes</span><span class="en-i">Priority paid opportunities</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Calendrier de disponibilité</span><span class="en-i">Calendar availability</span></li>
+            <li style="font-size:13px;color:rgba(25,6,1,0.6);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Tableau de bord analytique</span><span class="en-i">Analytics dashboard</span></li>
+          </ul>
+          <span class="btn-dark" onclick="goTo('candidature')" style="text-align:center;width:100%;padding:12px 24px;font-size:13px;"><span class="fr-i">Choisir</span><span class="en-i">Choose</span></span>
+        </div>
+
+        <!-- TIER 4: SIGNATURE -->
+        <div style="background:var(--dark);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:36px 28px;display:flex;flex-direction:column;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px;">Signature</div>
+          <div style="font-size:36px;font-weight:900;color:white;letter-spacing:-1.5px;margin-bottom:4px;">24$<span style="font-size:16px;font-weight:500;color:rgba(255,255,255,0.4);">/mois</span></div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:24px;"><span class="fr-i">Pour les professionnels sérieux</span><span class="en-i">For serious professionals</span></div>
+          <div style="background:rgba(241,79,53,0.15);border-radius:8px;padding:16px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:32px;font-weight:900;color:var(--red);">90%</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;"><span class="fr-i">à l'artiste</span><span class="en-i">to the artist</span></div>
+          </div>
+          <ul style="list-style:none;flex:1;margin-bottom:28px;">
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Placement premium</span><span class="en-i">Premium placement</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Commission la plus basse</span><span class="en-i">Lowest commission</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Rotation page d'accueil</span><span class="en-i">Homepage featured rotation</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Appels institutionnels privés</span><span class="en-i">Private institutional calls</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Kit médias & presse</span><span class="en-i">Media kit & press</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Vidéos & témoignages</span><span class="en-i">Video embeds & testimonials</span></li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.55);padding:6px 0;display:flex;gap:8px;"><span style="color:var(--red);">✓</span> <span class="fr-i">Vitrines curées Afroavenir</span><span class="en-i">Curated showcases</span></li>
+          </ul>
+          <span class="btn-red" onclick="goTo('candidature')" style="text-align:center;width:100%;padding:12px 24px;font-size:13px;"><span class="fr-i">Choisir Signature</span><span class="en-i">Choose Signature</span></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="background:white;padding:80px 32px;">
+    <div style="max-width:760px;margin:0 auto;">
+      <p class="s-eyebrow">FAQ</p>
+      <h2 class="s-title"><span class="fr-i">Questions fréquentes</span><span class="en-i">Frequently asked questions</span></h2>
+      <div style="margin-top:40px;">
+        <div style="border-bottom:1px solid rgba(25,6,1,0.08);padding:24px 0;">
+          <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Puis-je changer de forfait plus tard ?</span><span class="en-i">Can I change plans later?</span></h3>
+          <p style="font-size:14px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Oui, vous pouvez passer à un forfait supérieur ou inférieur à tout moment. Les changements prennent effet au prochain cycle de facturation.</span><span class="en-i">Yes, you can upgrade or downgrade at any time. Changes take effect on your next billing cycle.</span></p>
+        </div>
+        <div style="border-bottom:1px solid rgba(25,6,1,0.08);padding:24px 0;">
+          <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Comment fonctionne la commission ?</span><span class="en-i">How does the commission work?</span></h3>
+          <p style="font-size:14px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Afroavenir prend une commission uniquement sur les ventes réalisées via la plateforme. Il n'y a aucun frais caché. Votre pourcentage est garanti selon votre forfait.</span><span class="en-i">Afroavenir takes a commission only on sales made through the platform. There are no hidden fees. Your percentage is guaranteed by your plan.</span></p>
+        </div>
+        <div style="border-bottom:1px solid rgba(25,6,1,0.08);padding:24px 0;">
+          <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Que comprend le forfait Découverte ?</span><span class="en-i">What's included in the Discovery plan?</span></h3>
+          <p style="font-size:14px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Le forfait Découverte est entièrement gratuit et vous donne un profil public, jusqu'à 5 œuvres, et la capacité de recevoir des réservations et de vendre sur la GAAUL.</span><span class="en-i">The Discovery plan is completely free and gives you a public profile, up to 5 uploads, and the ability to receive bookings and sell on GAAUL.</span></p>
+        </div>
+        <div style="border-bottom:1px solid rgba(25,6,1,0.08);padding:24px 0;">
+          <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Mon profil est-il visible immédiatement ?</span><span class="en-i">Is my profile visible immediately?</span></h3>
+          <p style="font-size:14px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Les profils bêta sont revus par notre équipe avant publication. Le processus prend généralement 5 jours ouvrables.</span><span class="en-i">Beta profiles are reviewed by our team before going live. The process typically takes 5 business days.</span></p>
+        </div>
+        <div style="padding:24px 0;">
+          <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;"><span class="fr-i">Comment je reçois mes paiements ?</span><span class="en-i">How do I receive payments?</span></h3>
+          <p style="font-size:14px;color:rgba(25,6,1,0.5);line-height:1.7;"><span class="fr-i">Les paiements sont traités via Stripe et déposés directement dans votre compte. Les détails de paiement sont configurés lors de l'activation de votre profil.</span><span class="en-i">Payments are processed through Stripe and deposited directly into your account. Payment details are configured during profile activation.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div style="background:var(--dark);padding:80px 32px;text-align:center;">
+    <h2 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;margin-bottom:16px;"><span class="fr-i">Prêt à rejoindre ?</span><span class="en-i">Ready to join?</span></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto 32px;line-height:1.7;"><span class="fr-i">Créez votre profil artiste et commencez à vendre, à vous faire découvrir et à recevoir des réservations.</span><span class="en-i">Create your artist profile and start selling, getting discovered, and receiving bookings.</span></p>
+    <span class="btn-red" onclick="goTo('candidature')" style="font-size:15px;padding:16px 40px;"><span class="fr-i">Postuler maintenant</span><span class="en-i">Apply now</span></span>
+  </div>
+</div>
+<div class="page" id="candidature">
+
+  <!-- ── HERO ── -->
+  <section class="inner-hero" style="background:var(--dark);">
+    <div class="ih-bg" aria-hidden="true">CA</div>
+    <!-- Accent line -->
+    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red);z-index:1;" aria-hidden="true"></div>
+    <div class="ih-eyebrow">
+      <span class="fr-i">Artistes</span>
+      <span class="en-i">Artists</span>
+      &nbsp;·&nbsp; Beta
+    </div>
+    <h1 class="ih-title">
+      <span class="fr-i">Rejoindre<br>Afroavenir</span>
+      <span class="en-i">Join<br>Afroavenir</span>
+    </h1>
+    <p class="ih-sub">
+      <span class="fr-i">Les candidatures bêta sont examinées individuellement par notre équipe. Chaque profil approuvé est mis en ligne dans les 5 jours ouvrables.</span>
+      <span class="en-i">Beta applications are individually reviewed by our team. Every approved profile goes live within 5 business days.</span>
+    </p>
+    <!-- Beta badge -->
+    <div style="margin-top:28px;position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;background:rgba(241,79,53,0.12);border:1px solid rgba(241,79,53,0.25);border-radius:24px;padding:6px 14px;width:fit-content;">
+      <span style="width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0;"></span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);">
+        <span class="fr-i">Accès bêta ouvert</span>
+        <span class="en-i">Beta access open</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ── PAGE BAR ── -->
+  <div class="page-bar">
+    <span class="page-bar-back" onclick="goTo('home')">
+      &#8592;&nbsp;<span class="fr-i">Retour</span><span class="en-i">Back</span>
+    </span>
+    <span class="page-bar-title">
+      <span class="fr-i">Candidature artiste</span>
+      <span class="en-i">Artist Application</span>
+    </span>
+  </div>
+
+  <!-- ── FORM BODY ── -->
+  <div style="background:var(--cream);padding:80px 0 120px;">
+    <div style="max-width:760px;margin:0 auto;padding:0 32px;">
+
+      <!-- Intro note -->
+      <div style="margin-bottom:64px;">
+        <p class="s-eyebrow">
+          <span class="fr-i">Formulaire de candidature</span>
+          <span class="en-i">Application Form</span>
+        </p>
+        <h2 class="s-title" style="max-width:540px;">
+          <span class="fr-i">Présentez-vous à la communauté</span>
+          <span class="en-i">Introduce yourself to the community</span>
+        </h2>
+        <p class="s-sub" style="max-width:560px;">
+          <span class="fr-i">Remplissez ce formulaire avec soin — votre profil sera votre vitrine sur Afroavenir. Tous les champs marqués <span style="color:var(--red);">*</span> sont obligatoires.</span>
+          <span class="en-i">Fill this form carefully — your profile will be your showcase on Afroavenir. All fields marked <span style="color:var(--red);">*</span> are required.</span>
+        </p>
+      </div>
+
+      <!-- ACTION: Replace with Formspree endpoint -->
+      <form action="#" method="POST" novalidate>
+
+        <!-- ────────────────────────────
+             SECTION 1 — PERSONAL INFO
+        ──────────────────────────────── -->
+        <fieldset style="border:none;padding:0;margin:0 0 56px;">
+          <!-- Section header -->
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:11px;font-weight:800;color:white;">1</span>
+            </div>
+            <div>
+              <legend style="font-size:18px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">
+                <span class="fr-i">Informations personnelles</span>
+                <span class="en-i">Personal Information</span>
+              </legend>
+            </div>
+          </div>
+          <div style="border-left:2px solid rgba(25,6,1,0.07);padding-left:28px;">
+
+            <!-- First / Last name -->
+            <div class="f-row">
+              <div>
+                <label class="f-lbl" for="c-firstname">
+                  <span class="fr-i">Prénom</span><span class="en-i">First name</span>
+                  &nbsp;<span style="color:var(--red);">*</span>
+                </label>
+                <input class="f-in" id="c-firstname" name="prenom" type="text" required
+                  placeholder="Prénom / First name" autocomplete="given-name">
+              </div>
+              <div>
+                <label class="f-lbl" for="c-lastname">
+                  <span class="fr-i">Nom de famille</span><span class="en-i">Last name</span>
+                  &nbsp;<span style="color:var(--red);">*</span>
+                </label>
+                <input class="f-in" id="c-lastname" name="nom" type="text" required
+                  placeholder="Nom / Last name" autocomplete="family-name">
+              </div>
+            </div>
+
+            <!-- Artist/Stage name -->
+            <label class="f-lbl" for="c-alias">
+              <span class="fr-i">Nom d'artiste / Nom de scène</span>
+              <span class="en-i">Artist name / Stage name</span>
+            </label>
+            <input class="f-in" id="c-alias" name="nom_artiste" type="text"
+              placeholder="Nom d'artiste ou de scène">
+
+            <!-- Email -->
+            <label class="f-lbl" for="c-email">
+              <span class="fr-i">Adresse courriel</span>
+              <span class="en-i">Email address</span>
+              &nbsp;<span style="color:var(--red);">*</span>
+            </label>
+            <input class="f-in" id="c-email" name="email" type="email" required
+              placeholder="votre@email.com" autocomplete="email">
+
+            <!-- Phone -->
+            <label class="f-lbl" for="c-phone">
+              <span class="fr-i">Téléphone</span>
+              <span class="en-i">Phone</span>
+            </label>
+            <input class="f-in" id="c-phone" name="telephone" type="tel"
+              placeholder="+1 (514) 000-0000" autocomplete="tel">
+
+            <!-- City / Province -->
+            <div class="f-row">
+              <div>
+                <label class="f-lbl" for="c-city">
+                  <span class="fr-i">Ville</span>
+                  <span class="en-i">City</span>
+                  &nbsp;<span style="color:var(--red);">*</span>
+                </label>
+                <input class="f-in" id="c-city" name="ville" type="text" required
+                  placeholder="Montréal, Toronto…" autocomplete="address-level2">
+              </div>
+              <div>
+                <label class="f-lbl" for="c-province">
+                  <span class="fr-i">Province / Région</span>
+                  <span class="en-i">Province / Region</span>
+                  &nbsp;<span style="color:var(--red);">*</span>
+                </label>
+                <select class="f-sel" id="c-province" name="province" required>
+                  <option value="" disabled selected>
+                    — Sélectionner / Select —
+                  </option>
+                  <option value="QC">Québec</option>
+                  <option value="ON">Ontario</option>
+                  <option value="other">
+                    Autre / Other
+                  </option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- ────────────────────────────
+             SECTION 2 — ARTISTIC PRACTICE
+        ──────────────────────────────── -->
+        <fieldset style="border:none;padding:0;margin:0 0 56px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:11px;font-weight:800;color:white;">2</span>
+            </div>
+            <div>
+              <legend style="font-size:18px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">
+                <span class="fr-i">Pratique artistique</span>
+                <span class="en-i">Artistic Practice</span>
+              </legend>
+            </div>
+          </div>
+          <div style="border-left:2px solid rgba(25,6,1,0.07);padding-left:28px;">
+
+            <!-- Primary discipline -->
+            <label class="f-lbl" for="c-discipline">
+              <span class="fr-i">Discipline principale</span>
+              <span class="en-i">Primary discipline</span>
+              &nbsp;<span style="color:var(--red);">*</span>
+            </label>
+            <select class="f-sel" id="c-discipline" name="discipline_principale" required>
+              <option value="" disabled selected>
+                — Choisir / Choose —
+              </option>
+              <option value="arts_visuels">Arts visuels / Visual arts</option>
+              <option value="musique">Musique / Music</option>
+              <option value="danse">Danse / Dance</option>
+              <option value="photographie">Photographie / Photography</option>
+              <option value="mode">Mode / Fashion</option>
+              <option value="sculpture">Sculpture</option>
+              <option value="arts_numeriques">Arts numériques / Digital arts</option>
+              <option value="performance">Performance</option>
+              <option value="autre">Autre / Other</option>
+            </select>
+
+            <!-- Secondary disciplines -->
+            <label class="f-lbl" for="c-disciplines-sec">
+              <span class="fr-i">Disciplines secondaires</span>
+              <span class="en-i">Secondary disciplines</span>
+            </label>
+            <input class="f-in" id="c-disciplines-sec" name="disciplines_secondaires" type="text"
+              placeholder="ex: photographie, performance, mode…">
+
+            <!-- Bio -->
+            <label class="f-lbl" for="c-bio">
+              <span class="fr-i">Biographie courte</span>
+              <span class="en-i">Short bio</span>
+              &nbsp;<span style="color:var(--red);">*</span>
+            </label>
+            <textarea class="f-ta" id="c-bio" name="bio" required maxlength="500"
+              style="min-height:120px;"
+              placeholder="Présentez-vous en quelques phrases (max 500 caractères)…"></textarea>
+            <p class="f-note" style="text-align:right;margin-top:-4px;margin-bottom:8px;">
+              <span class="fr-i">Maximum 500 caractères</span>
+              <span class="en-i">Maximum 500 characters</span>
+            </p>
+
+            <!-- Artist statement -->
+            <label class="f-lbl" for="c-statement">
+              <span class="fr-i">Démarche artistique</span>
+              <span class="en-i">Artist statement</span>
+            </label>
+            <textarea class="f-ta" id="c-statement" name="demarche_artistique"
+              style="min-height:150px;"
+              placeholder="Décrivez votre vision, vos influences, votre démarche créative…"></textarea>
+
+          </div>
+        </fieldset>
+
+        <!-- ────────────────────────────
+             SECTION 3 — PORTFOLIO & PRESENCE
+        ──────────────────────────────── -->
+        <fieldset style="border:none;padding:0;margin:0 0 56px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:11px;font-weight:800;color:white;">3</span>
+            </div>
+            <div>
+              <legend style="font-size:18px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">
+                <span class="fr-i">Portfolio &amp; présence en ligne</span>
+                <span class="en-i">Portfolio &amp; Online Presence</span>
+              </legend>
+            </div>
+          </div>
+          <div style="border-left:2px solid rgba(25,6,1,0.07);padding-left:28px;">
+
+            <!-- Portfolio URL -->
+            <label class="f-lbl" for="c-portfolio">
+              <span class="fr-i">Lien portfolio</span>
+              <span class="en-i">Portfolio URL</span>
+            </label>
+            <input class="f-in" id="c-portfolio" name="portfolio_url" type="url"
+              placeholder="https://monportfolio.com">
+
+            <!-- Website -->
+            <label class="f-lbl" for="c-website">
+              <span class="fr-i">Site web</span>
+              <span class="en-i">Website</span>
+            </label>
+            <input class="f-in" id="c-website" name="site_web" type="url"
+              placeholder="https://monsite.com">
+
+            <!-- Instagram / Other social -->
+            <div class="f-row">
+              <div>
+                <label class="f-lbl" for="c-instagram">Instagram</label>
+                <input class="f-in" id="c-instagram" name="instagram" type="text"
+                  placeholder="@votre_pseudo">
+              </div>
+              <div>
+                <label class="f-lbl" for="c-social-other">
+                  <span class="fr-i">Autres réseaux</span>
+                  <span class="en-i">Other social media</span>
+                </label>
+                <input class="f-in" id="c-social-other" name="autres_reseaux" type="text"
+                  placeholder="TikTok, Facebook, LinkedIn…">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- ────────────────────────────
+             SECTION 4 — SERVICES & AVAILABILITY
+        ──────────────────────────────── -->
+        <fieldset style="border:none;padding:0;margin:0 0 56px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:11px;font-weight:800;color:white;">4</span>
+            </div>
+            <div>
+              <legend style="font-size:18px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">
+                <span class="fr-i">Services &amp; disponibilité</span>
+                <span class="en-i">Services &amp; Availability</span>
+              </legend>
+            </div>
+          </div>
+          <div style="border-left:2px solid rgba(25,6,1,0.07);padding-left:28px;">
+
+            <!-- Services offered -->
+            <label class="f-lbl" for="c-services">
+              <span class="fr-i">Services offerts</span>
+              <span class="en-i">Services offered</span>
+              &nbsp;<span style="color:var(--red);">*</span>
+            </label>
+            <textarea class="f-ta" id="c-services" name="services_offerts" required
+              style="min-height:110px;"
+              placeholder="ex: murales, ateliers, live painting, DJ sets, commissions, conférences…"></textarea>
+
+            <!-- Price range / Availability -->
+            <div class="f-row">
+              <div>
+                <label class="f-lbl" for="c-price">
+                  <span class="fr-i">Gamme de prix</span>
+                  <span class="en-i">Price range</span>
+                </label>
+                <select class="f-sel" id="c-price" name="gamme_prix">
+                  <option value="" disabled selected>— Choisir / Choose —</option>
+                  <option value="under_500">
+                    Moins de 500$ / Under 500$
+                  </option>
+                  <option value="500_1000">500 – 1 000$</option>
+                  <option value="1000_2500">1 000 – 2 500$</option>
+                  <option value="2500_5000">2 500 – 5 000$</option>
+                  <option value="5000_plus">5 000$+</option>
+                  <option value="flexible">
+                    Flexible / Negotiable
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label class="f-lbl" for="c-availability">
+                  <span class="fr-i">Disponibilité</span>
+                  <span class="en-i">Availability</span>
+                </label>
+                <select class="f-sel" id="c-availability" name="disponibilite">
+                  <option value="" disabled selected>— Choisir / Choose —</option>
+                  <option value="full_time">
+                    Temps plein / Full-time
+                  </option>
+                  <option value="part_time">
+                    Temps partiel / Part-time
+                  </option>
+                  <option value="weekends">
+                    Fins de semaine / Weekends only
+                  </option>
+                  <option value="project">
+                    Par projet / Project-based
+                  </option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Membership tier -->
+            <label class="f-lbl" for="c-tier">
+              <span class="fr-i">Niveau d'adhésion souhaité</span>
+              <span class="en-i">Interested membership tier</span>
+              &nbsp;<span style="color:var(--red);">*</span>
+            </label>
+            <select class="f-sel" id="c-tier" name="niveau_adhesion" required>
+              <option value="" disabled selected>— Choisir / Choose —</option>
+              <option value="decouverte">
+                Découverte — Gratuit / Free
+              </option>
+              <option value="emergence">
+                Émergence — 12$/mois
+              </option>
+              <option value="pro_creatif">
+                Pro Créatif — 18$/mois
+              </option>
+              <option value="signature">
+                Signature — 24$/mois
+              </option>
+            </select>
+
+            <!-- Tier info cards -->
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:4px;margin-bottom:8px;">
+              <div style="padding:14px 16px;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:6px;">
+                <p style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Découverte</p>
+                <p style="font-size:12px;color:rgba(25,6,1,0.5);line-height:1.5;">
+                  <span class="fr-i">Profil public, accès communauté</span>
+                  <span class="en-i">Public profile, community access</span>
+                </p>
+              </div>
+              <div style="padding:14px 16px;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:6px;">
+                <p style="font-size:11px;font-weight:700;color:var(--navy);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Émergence</p>
+                <p style="font-size:12px;color:rgba(25,6,1,0.5);line-height:1.5;">
+                  <span class="fr-i">Visibilité accrue, portfolio étendu</span>
+                  <span class="en-i">Increased visibility, extended portfolio</span>
+                </p>
+              </div>
+              <div style="padding:14px 16px;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:6px;">
+                <p style="font-size:11px;font-weight:700;color:var(--brown);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Pro Créatif</p>
+                <p style="font-size:12px;color:rgba(25,6,1,0.5);line-height:1.5;">
+                  <span class="fr-i">Mise en avant, outils pro, analytics</span>
+                  <span class="en-i">Featured placement, pro tools, analytics</span>
+                </p>
+              </div>
+              <div style="padding:14px 16px;background:var(--dark);border:1px solid rgba(255,255,255,0.0);border-radius:6px;">
+                <p style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Signature</p>
+                <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5;">
+                  <span class="fr-i">Priorité éditoriale, accès événements</span>
+                  <span class="en-i">Editorial priority, events access</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- ────────────────────────────
+             SECTION 5 — AGREEMENT
+        ──────────────────────────────── -->
+        <fieldset style="border:none;padding:0;margin:0 0 48px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-size:11px;font-weight:800;color:white;">5</span>
+            </div>
+            <div>
+              <legend style="font-size:18px;font-weight:800;color:var(--dark);letter-spacing:-0.3px;">
+                <span class="fr-i">Consentement &amp; conditions</span>
+                <span class="en-i">Consent &amp; Conditions</span>
+              </legend>
+            </div>
+          </div>
+          <div style="border-left:2px solid rgba(25,6,1,0.07);padding-left:28px;display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Checkbox 1 — Terms -->
+            <label style="display:flex;align-items:flex-start;gap:14px;cursor:pointer;padding:16px 18px;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:6px;transition:border-color 0.2s;"
+                   onmouseover="this.style.borderColor='rgba(241,79,53,0.3)'" onmouseout="this.style.borderColor='rgba(25,6,1,0.07)'">
+              <input type="checkbox" name="accord_conditions" required
+                style="margin-top:3px;width:16px;height:16px;accent-color:var(--red);flex-shrink:0;cursor:pointer;">
+              <span style="font-size:13px;color:var(--dark);line-height:1.6;font-weight:400;">
+                <span class="fr-i">J'accepte les <a href="#" style="color:var(--red);text-decoration:none;font-weight:600;">conditions générales d'utilisation</a> d'Afroavenir et sa politique de confidentialité. <span style="color:var(--red);">*</span></span>
+                <span class="en-i">I agree to Afroavenir's <a href="#" style="color:var(--red);text-decoration:none;font-weight:600;">terms and conditions</a> and privacy policy. <span style="color:var(--red);">*</span></span>
+              </span>
+            </label>
+
+            <!-- Checkbox 2 — Profile review -->
+            <label style="display:flex;align-items:flex-start;gap:14px;cursor:pointer;padding:16px 18px;background:white;border:1px solid rgba(25,6,1,0.07);border-radius:6px;transition:border-color 0.2s;"
+                   onmouseover="this.style.borderColor='rgba(241,79,53,0.3)'" onmouseout="this.style.borderColor='rgba(25,6,1,0.07)'">
+              <input type="checkbox" name="accord_revision" required
+                style="margin-top:3px;width:16px;height:16px;accent-color:var(--red);flex-shrink:0;cursor:pointer;">
+              <span style="font-size:13px;color:var(--dark);line-height:1.6;font-weight:400;">
+                <span class="fr-i">Je comprends que mon profil sera examiné par l'équipe Afroavenir avant sa mise en ligne. <span style="color:var(--red);">*</span></span>
+                <span class="en-i">I understand that my profile will be reviewed by the Afroavenir team before going live. <span style="color:var(--red);">*</span></span>
+              </span>
+            </label>
+
+          </div>
+        </fieldset>
+
+        <!-- ── SUBMIT ── -->
+        <div style="padding-top:8px;">
+          <button type="submit" class="f-sub-btn" style="font-size:15px;letter-spacing:0.01em;">
+            <span class="fr-i">Soumettre ma candidature</span>
+            <span class="en-i">Submit Application</span>
+          </button>
+          <p class="f-note" style="margin-top:16px;">
+            <span class="fr-i">Les candidatures sont révisées sous 5 jours ouvrables. Vous recevrez une confirmation par courriel.</span>
+            <span class="en-i">Applications are reviewed within 5 business days. You will receive a confirmation by email.</span>
+          </p>
+        </div>
+
+      </form>
+      <!-- END FORM -->
+
+    </div>
+  </div>
+
+  <!-- ── BOTTOM CTA BAND ── -->
+  <div style="background:var(--dark);padding:64px 48px;text-align:center;">
+    <p style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px;">
+      <span class="fr-i">Des questions ?</span>
+      <span class="en-i">Questions?</span>
+    </p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.45);max-width:440px;margin:0 auto 28px;line-height:1.7;font-weight:300;">
+      <span class="fr-i">Notre équipe est disponible pour vous accompagner dans votre démarche.</span>
+      <span class="en-i">Our team is available to support you throughout the process.</span>
+    </p>
+    <a href="mailto:artistes@afroavenir.com" class="btn-red" style="text-decoration:none;">
+      artistes@afroavenir.com
+    </a>
+  </div>
+
+</div>
 <script>
   let lang='fr', currentView='grid';
   let rActiveFilters={discipline:'all',status:'all',search:''};
